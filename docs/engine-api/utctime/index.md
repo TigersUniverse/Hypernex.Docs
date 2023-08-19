@@ -1,13 +1,12 @@
-# Time
+# UtcTime
 
-Time gets current time information for the server or client. When Time is instantiated, that's when the Date is captured.
+UtcTime gets current time information in a UTC format for the server or client. When UtcTime is instantiated, that's when the Date is captured.
 
 **Instance Methods**
 
 Method Name | Return Type | Description
 --- | --- | ---
 [Load](load) | void | Loads a specific time
-[Is24HourClock](is24hourclock) | bool | Checks if the machine is using a 24hr clock
 [GetDayOfWeek](getdayofweek) | string | Returns the current day in the week
 [GetMonthName](getmonthname) | string | Returns the current month name
 [GetAMPM](getampm) | string | Returns if it is AM or PM as a string

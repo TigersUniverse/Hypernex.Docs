@@ -1,14 +1,14 @@
-# OnUpdate
+# RemoveOnUpdate
 
-Invokes a SandboxFunc on every Update frame.
+Removes a SandboxFunc from every Update frame.
 
 **Parameters**
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-s | SandboxFunc | The function to invoke on Update
+s | SandboxFunc | The function to remove from OnUpdate
 
-The following example creates an Update which sets a text label to the current date. This example assumes this is a **LocalScript**.
+The following example creates an Update which sets a text label to the current date, then removes it whenever. This example assumes this is a **LocalScript**.
 
 **JavaScript**
 ```js
@@ -18,6 +18,8 @@ let action = new SandboxFunc(engine).SetAction(() => {
     UI.SetText(t, time.GetMonthName() + " " + time.GetDay() + ", " + time.GetYear())
 })
 Runtime.OnUpdate(action)
+// Do something here that signifies a wait
+Runtime.RemoveOnUpdate(action)
 ```
 
 **Lua**
@@ -28,4 +30,6 @@ local action = SandboxFunc().SetAction(function()
     UI>SetText(t, time.GetMonthName().." "..tostring(time.GetDay())..", "..tostring(time.GetYear()))
 end)
 Runtime.OnUpdate(action)
+-- Do something here that signifies a wait
+Runtime.RemoveOnUpdate(action)
 ```

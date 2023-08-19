@@ -1,12 +1,19 @@
 # GetAvatarObject
 
-The GetAvatarObject method returns an [Item](../item/) from the LocalPlayer's Avatar. It needs the HumanBodyBones parameter to define which bone from a Humanoid to return.
+The GetAvatarObject method returns an Item from the LocalPlayer's Avatar. It needs the HumanBodyBones parameter to define which bone from a Humanoid to return.
+
+:::note
+
++ Returns an [Item](../item) for **LocalAvatarScripts**
++ Returns a [ReadonlyItem](../readonlyitem) for **LocalScripts**
+
+:::
 
 **Parameters**
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-humanBodyBone | HumanBodyBones | The HumanBodyBone to get from an Avatar
+humanBodyBone | [HumanBodyBones](../humanbodybones) | The HumanBodyBone to get from an Avatar
 
 :::caution
 

@@ -12,7 +12,9 @@ The Runtime class provides methods and properties to execute code at specified t
 
 Method Name | Return Type | Description
 --- | --- | ---
-[OnUpdate](onupdate.md) | void | Invokes a SandboxFunc on [Update](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html)
-[RemoveOnUpdate](removeonupdate.md) | void | Removes a SandboxFunc that was marked to me OnUpdate
-[OnLateUpdate](onlateupdate.md) | void | Invokes a SandboxFunc on [LateUpdate](https://docs.unity3d.com/ScriptReference/MonoBehaviour.LateUpdate.html)
-[RemoveOnLateUpdate](removeonlateupdate.md) | void | Removes a SandboxFunc that was marked to me OnLateUpdate
+[OnFixedUpdate](onfixedupdate) | void | Invokes a SandboxFunc on [FixedUpdate](https://docs.unity3d.com/ScriptReference/MonoBehaviour.FixedUpdate.html)
+[RemoveOnFixedUpdate](removeonfixedupdate) | void | Removes a SandboxFunc that was marked to OnFixedUpdate
+[OnUpdate](onupdate) | void | Invokes a SandboxFunc on [Update](https://docs.unity3d.com/ScriptReference/MonoBehaviour.Update.html)
+[RemoveOnUpdate](removeonupdate) | void | Removes a SandboxFunc that was marked to OnUpdate
+[OnLateUpdate](onlateupdate) | void | Invokes a SandboxFunc on [LateUpdate](https://docs.unity3d.com/ScriptReference/MonoBehaviour.LateUpdate.html)
+[RemoveOnLateUpdate](removeonlateupdate) | void | Removes a SandboxFunc that was marked to OnLateUpdate

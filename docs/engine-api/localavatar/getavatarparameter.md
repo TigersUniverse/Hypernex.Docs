@@ -1,10 +1,10 @@
-# GetParameter
+# GetAvatarParameter
 
-The GetParameter function returns the value of a parameter as an object. You should know what type the Parameter is when getting it to be able to properly handle it.
+The GetAvatarParameter function returns an [AvatarParameter](../avatarparameter). You should know what type the Parameter is when getting it to be able to properly handle it.
 
-::: caution
+:::caution
 
-`Trigger` parameter types are not supported and will not be for GetParameter.
+`Trigger` parameter types are not supported and will throw an Exception when trying to get one.
 
 :::
 
@@ -14,13 +14,13 @@ The GetParameter function returns the value of a parameter as an object. You sho
  --- | --- | ---
  parameterName | string | The name of the parameter to get the value of
 
- The following example gets a float parameter and sizes a GameObject in the avatar.
+ The following example gets a parameter (assuming it's a float) and sizes an Item in the avatar.
 
  **JavaScript**
  ```js
 let item = LocalAvatar.GetAvatarObjectByPath("Hips/Spine/Neck/Head/Pet")
 Runtime.OnUpdate(new SandboxFunc(engine).SetAction(() => {
-    let parameterValue = LocalAvatar.GetParameter("petScale")
+    let parameterValue = LocalAvatar.GetAvatarParameter("petScale").GetValue()
     // Assuming the pet is uniform scale
     let sizeValue = parameterValue / 5
     item.LocalSize = new float3(sizeValue, sizeValue, sizeValue)
@@ -31,7 +31,7 @@ Runtime.OnUpdate(new SandboxFunc(engine).SetAction(() => {
  ```lua
 local item = LocalAvatar.GetAvatarObjectByPath("Hips/Spine/Neck/Head/Pet")
 Runtime.OnUpdate(SandboxFunc().SetAction(function ()
-    local parameterValue = tonumber(LocalAvatar.GetParameter("petScale"))
+    local parameterValue = tonumber(LocalAvatar.GetAvatarParameter("petScale").GetValue())
     // Assuming the pet is uniform scale
     local sizeValue = parameterValue / 5
     local float3Value = float3()

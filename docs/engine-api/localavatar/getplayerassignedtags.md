@@ -15,15 +15,15 @@ for (let i = 0; i < tags.length; i++)
         print("You're special!")
         return
     }
-    print("You're not special..")
 }
+print("You're not special..")
 ```
 
 **Lua**
 ```lua
 local tags = LocalPlayer.GetPlayerAssignedTags()
 for _, tag in ipairs(tags) do
-    if tag == "special" do print("You're special!") end
-    print("You're not special..")
+    if tag == "special" do print("You're special!") return end
 end
+print("You're not special..")
 ```

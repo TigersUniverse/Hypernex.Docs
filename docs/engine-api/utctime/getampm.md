@@ -1,12 +1,12 @@
 # GetAMPM
 
-Returns whether the hour is AM or PM. Primarily used with [Is24HourClock](is24hourclock) and [GetHours](gethours).
+Returns whether the hour is AM or PM. Primarily used with [Is24HourClock](is24hourclock.md) and [GetHours](gethours.md).
 
 The following example returns the time with AM/PM appended if needed
 
 **JavaScript**
 ```js
-let time = new Time()
+let time = new UtcTime()
 let hours = time.GetHours()
 let minutes = time.GetMinutes()
 
@@ -33,7 +33,7 @@ print("The current time is " + timeText)
 
 **Lua**
 ```lua
-local time = Time()
+local time = UtcTime()
 local hours = time.GetHours()
 local minutes = time.GetMinutes()
 
