@@ -34,9 +34,14 @@ const config = {
 
   presets: [
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      "docusaurus-preset-openapi",
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
+        api: {
+          path: "openapi-docs.json",
+          routeBasePath: "/docs/api",
+          sidebarCollapsible: false
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
@@ -55,7 +60,7 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
-    ],
+    ]
   ],
 
   themeConfig:
@@ -76,7 +81,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },*/
-          {to: '/docs', label: 'Documentation', position: 'left'},
+          {to: '/docs/api', label: 'Cloud API', position: 'left'},
           {to: '/docs/engine-api', label: 'Engine API', position: 'left'},
           {
             href: 'https://github.com/TigersUniverse',
@@ -91,6 +96,10 @@ const config = {
           {
             title: 'Docs',
             items: [
+              {
+                label: 'Cloud API',
+                to: '/docs/api',
+              },
               {
                 label: 'Engine API',
                 to: '/docs/engine-api',

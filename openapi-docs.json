@@ -1,0 +1,95 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Hypernex.API Documentation",
+        "version": "1"
+    },
+    "servers": [
+        {
+            "url": "https://play.hypernex.dev/api/v1",
+            "description": "Version 1 API Main Server"
+        }
+    ],
+    "paths": {
+        "/isInviteCodeRequired":{
+            "get":{
+                "summary": "isInviteCodeRequired",
+                "description": "Gets whether or not an InviteCode is required to Create an Account",
+                "responses": {
+                    "200": {
+                        "description": "Whether or not an InviteCode is required to Create an Account",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "inviteCodeRequired": {
+                                                    "description": "Whether or not an InviteCode is required to Create an Account",
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": ["inviteCodeRequired"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/allowAnyGameServer":{
+            "get":{
+                "summary": "allowAnyGameServer",
+                "description": "Gets whether or not a GameServerToken is required to host a GameServer",
+                "responses": {
+                    "200": {
+                        "description": "Whether or not a GameServerToken is required to host a GameServer",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "allowAnyGameServer": {
+                                                    "description": "Whether or not a GameServerToken is required to host a GameServer",
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": ["allowAnyGameServer"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

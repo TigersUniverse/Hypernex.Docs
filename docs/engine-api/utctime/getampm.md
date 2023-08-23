@@ -1,6 +1,6 @@
 # GetAMPM
 
-Returns whether the hour is AM or PM. Primarily used with [Is24HourClock](is24hourclock.md) and [GetHours](gethours.md).
+Returns whether the hour is AM or PM. Primarily used with [Is24HourClock](../time/is24hourclock.md) and [GetHours](gethours.md).
 
 The following example returns the time with AM/PM appended if needed
 
