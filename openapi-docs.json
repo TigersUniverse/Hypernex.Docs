@@ -90,6 +90,130 @@
                     }
                 }
             }
+        },
+        "/getSocketInfo":{
+            "get":{
+                "summary": "getSocketInfo",
+                "description": "Gets information (such as the address, port, and SSL) for the WebSocket",
+                "responses": {
+                    "200": {
+                        "description": "Gets information (such as the address, port, and SSL) for the WebSocket",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "IsWSS": {
+                                                    "description": "If the Socket uses SSL",
+                                                    "type": "boolean"
+                                                },
+                                                "Port": {
+                                                    "description": "The port the WebSocket is running on",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["IsWSS", "Port"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/authForBuilds":{
+            "get":{
+                "summary": "authForBuilds",
+                "description": "Gets whether or not a Login is required to download builds",
+                "responses": {
+                    "200": {
+                        "description": "Gets whether or not a Login is required to download builds",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "authForBuilds": {
+                                                    "description": "Whether or not a Login is required to download builds",
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": ["authForBuilds"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/unityVersion":{
+            "get":{
+                "summary": "unityVersion",
+                "description": "Gets the current Unity Version being used",
+                "responses": {
+                    "200": {
+                        "description": "Gets the current Unity Version being used",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "UnityVersion": {
+                                                    "description": "The current Unity Version being used",
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "required": ["UnityVersion"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
