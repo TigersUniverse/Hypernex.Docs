@@ -39,7 +39,7 @@ const config = {
       ({
         api: {
           path: "openapi-docs.json",
-          routeBasePath: "/docs/api",
+          routeBasePath: "/docs/cloud-api",
           sidebarCollapsible: false
         },
         docs: {
@@ -81,7 +81,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },*/
-          {to: '/docs/api', label: 'Cloud API', position: 'left'},
+          {to: '/docs/cloud-api', label: 'Cloud API', position: 'left'},
           {to: '/docs/engine-api', label: 'Engine API', position: 'left'},
           {
             href: 'https://github.com/TigersUniverse',
@@ -98,7 +98,7 @@ const config = {
             items: [
               {
                 label: 'Cloud API',
-                to: '/docs/api',
+                to: '/docs/cloud-api',
               },
               {
                 label: 'Engine API',

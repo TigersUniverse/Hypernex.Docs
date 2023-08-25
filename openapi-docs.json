@@ -17,7 +17,7 @@
                 "description": "Gets whether or not an InviteCode is required to Create an Account",
                 "responses": {
                     "200": {
-                        "description": "Whether or not an InviteCode is required to Create an Account",
+                        "description": "A successful request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -57,7 +57,7 @@
                 "description": "Gets whether or not a GameServerToken is required to host a GameServer",
                 "responses": {
                     "200": {
-                        "description": "Whether or not a GameServerToken is required to host a GameServer",
+                        "description": "A successful request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -97,7 +97,7 @@
                 "description": "Gets information (such as the address, port, and SSL) for the WebSocket",
                 "responses": {
                     "200": {
-                        "description": "Gets information (such as the address, port, and SSL) for the WebSocket",
+                        "description": "A successful request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -141,7 +141,7 @@
                 "description": "Gets whether or not a Login is required to download builds",
                 "responses": {
                     "200": {
-                        "description": "Gets whether or not a Login is required to download builds",
+                        "description": "A successful request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -181,7 +181,7 @@
                 "description": "Gets the current Unity Version being used",
                 "responses": {
                     "200": {
-                        "description": "Gets the current Unity Version being used",
+                        "description": "A successful request",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -205,6 +205,395 @@
                                                 }
                                             },
                                             "required": ["UnityVersion"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/createUser": {
+            "post": {
+                "summary": "createUser",
+                "description": "Creates a new user",
+                "requestBody": {
+                    "description": "Information required to create a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "description": "The username to create an account. Must be only letters and numbers, and ONE underscore allowed.",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "The password to use on the new account. Must contain at least one lowercase and uppercase letter, one number, and one special character.",
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "description": "The email to use on the new account. Must be a valid email.",
+                                        "type": "string"
+                                    },
+                                    "inviteCode": {
+                                        "description": "The provided invite code. Check if required with /isInviteCodeRequired",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["username", "password", "email"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "UserData": {
+                                                    "description": "The returned private UserData",
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": ["UserData"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/doesUserExist": {
+            "post": {
+                "summary": "doesUserExist",
+                "description": "Checks to see if a user exists by UserId",
+                "requestBody": {
+                    "description": "Information required to check if a user exists",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "doesUserExist": {
+                                                    "description": "If a user exists",
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": ["doesUserExist"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getUser": {
+            "post": {
+                "summary": "getUser",
+                "description": "Gets a user by either their username or userid. If a token is provided, then the private UserData is returned",
+                "requestBody": {
+                    "description": "Information required to check if a user exists",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "username": {
+                                        "description": "The Username",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "UserData":{
+                                                    "description": "The returned UserData. Private if a valid token was provided",
+                                                    "type": "object"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/login": {
+            "post": {
+                "summary": "login",
+                "description": "Logs a user into their account by giving them an account token",
+                "requestBody": {
+                    "description": "The information required to login",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "app": {
+                                        "description": "The app that is logging in",
+                                        "type": "string"
+                                    },
+                                    "username": {
+                                        "description": "The username of the account being logged in to",
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "description": "The password of the account",
+                                        "type": "string"
+                                    },
+                                    "twofacode": {
+                                        "description": "The 2FA code if needed",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["username", "password"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "LoginResult": {
+                                                    "description": "The LoginResult. 0 - Incorrect, 1 - Missing2FA, 2 - Banned, 3 - Warned, 4 - Correct.",
+                                                    "type": "integer"
+                                                },
+                                                "WarnStatus": {
+                                                    "description": "If present, then the user has received a warning. This should be displayed.",
+                                                    "type": "object"
+                                                },
+                                                "BanStatus": {
+                                                    "description": "If present, then the user has been banned. No token will be given and the ban note should be displayed.",
+                                                    "type": "object"
+                                                },
+                                                "token": {
+                                                    "description": "The created token to be used for authentication",
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "required": ["LoginResult"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/logout": {
+            "post": {
+                "summary": "logout",
+                "description": "Logs a user out by invalidating a valid token.",
+                "requestBody": {
+                    "description": "The information required to logout",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "type": "string",
+                                        "description": "The UserId"
+                                    },
+                                    "tokenContent": {
+                                        "type": "string",
+                                        "description": "The token to invalidate"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/isValidToken": {
+            "post": {
+                "summary": "isValidToken",
+                "description": "Checks to see if a token is valid from either a userid or username",
+                "requestBody": {
+                    "description": "Information required to check a token is valid",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "username": {
+                                        "description": "The Username",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "isValidToken":{
+                                                    "description": "The returned UserData. Private if a valid token was provided",
+                                                    "type": "boolean"
+                                                }
+                                            },
+                                            "required": ["isValidToken"]
                                         }
                                     },
                                     "required": ["success", "message"]
