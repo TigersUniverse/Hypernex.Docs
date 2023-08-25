@@ -4,7 +4,7 @@ A Data object for forwarding simple transform information to the server.
 
 :::note
 
-+ Properties for NetworkedObjects should be seen only as data stores; do not associate them with Transforms. Use [Items](../item) for getting/setting Transform properties on the client.
++ Properties for NetworkedObjects should be seen only as data stores; do not associate them with Transforms. Use [Item](../item)s for getting/setting Transform properties on the client.
 + This type can be networked
 
 :::
