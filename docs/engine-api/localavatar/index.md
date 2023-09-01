@@ -30,3 +30,4 @@ Method Name | Return Type | Description
 [TeleportTo](teleportto) | void | (**LocalScript** only) Teleports the Player to a specific position in World Space
 [Rotate](rotate) | void | (**LocalScript** only) Rotates the Player to a specific rotation in World Space
 [GetPronouns](getpronouns) | [Pronouns](../pronouns) | Gets a Player's Pronouns
+SetAvatar | void | Sets the user's avatar
