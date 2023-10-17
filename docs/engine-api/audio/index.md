@@ -12,6 +12,7 @@ Provides functions for interfacing with AudioSources attached to Items
 
 Method Name | Return Type | Description
 --- | --- | ---
+IsValid | bool | Returns true if there is a valid AudioSource component
 IsPlaying | bool | Returns true if the attached AudioSource is playing
 IsMuted | bool | Returns true if the attached AudioSource is muted
 IsLooping | bool | Returns true if the attached AudioSource is looping
