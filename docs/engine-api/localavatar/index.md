@@ -12,6 +12,7 @@ The LocalAvatar class provides developers with a way to get simple LocalAvatar d
 
 Method Name | Return Type | Description
 --- | --- | ---
+IsLocalPlayerId | bool | Returns true if the UserId provided is the LocalPlayer's UserId
 [GetAvatarObject](getavatarobject) | [Item](../item/) or [ReadonlyItem](../readonlyitem/) | Gets an Item from the Current Avatar based on the [HumanBodyBone](../humanbodybones)
 [GetAvatarObjectByPath](getavatarobjectbypath) | [Item](../item/) or [ReadonlyItem](../readonlyitem/) | Gets an Item from the Current Avatar based on a path relative to the Avatar
 [GetPlayerRoot](getplayerroot) | [ReadonlyItem](../readonlyitem/) or [Item](../item/) | Gets the Root Item of the Player
@@ -29,4 +30,6 @@ Method Name | Return Type | Description
 [Respawn](respawn) | void | Respawns a player
 [TeleportTo](teleportto) | void | (**LocalScript** only) Teleports the Player to a specific position in World Space
 [Rotate](rotate) | void | (**LocalScript** only) Rotates the Player to a specific rotation in World Space
+Scale | void | Scales the avatar by a scale factor
 [GetPronouns](getpronouns) | [Pronouns](../pronouns) | Gets a Player's Pronouns
+SetAvatar | void | Sets the user's avatar

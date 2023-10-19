@@ -29,4 +29,6 @@ OverlapBox | [Collider](../collider)[] | Finds all colliders touching inside of 
 OverlapCapsule | [Collider](../collider)[] | Checks the given capsule against the physics world and returns all overlapping colliders
 OverlapSphere | [Collider](../collider)[] | Computes colliders touching or that are inside the sphere
 Raycast | [RaycastHit](../raycasthit)[] | Casts a ray through the Scene and returns all hits
+RaycastAll | [RaycastHit](../raycasthit)[] | Casts a ray through the Scene and returns all hits
 SphereCast | [RaycastHit](../raycasthit)[] | Casts a sphere along the direction and returns all hits
+SphereCastAll | [RaycastHit](../raycasthit)[] | Casts a sphere along the direction and returns all hits
