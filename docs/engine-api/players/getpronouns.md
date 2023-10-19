@@ -15,7 +15,7 @@ The example below listens for a user to join, then prints their name and pronoun
 Events.Subscribe(ScriptEvent.OnUserJoin, userid => {
     let pronouns = Players.GetPronouns(userid)
     if(pronouns === null || pronouns === undefined) return
-    print(Players.GetUsername(userid) + " has joined, say hi to " + pronouns.AccusativeCase "!")
+    print(Players.GetUsername(userid) + " has joined, say hi to " + pronouns.AccusativeCase + "!")
 })
 ```
 
@@ -24,6 +24,6 @@ Events.Subscribe(ScriptEvent.OnUserJoin, userid => {
 Events.Subscribe(ScriptEvent.OnUserJoin, function(userid)
     local pronouns = Players.GetPronouns(userid)
     if pronouns == nil then return end
-    print(Players.GetUsername(userid).." has joined, say hi to "..pronouns.AccusativeCase "!")
+    print(Players.GetUsername(userid).." has joined, say hi to "..pronouns.AccusativeCase.."!")
 end)
 ```

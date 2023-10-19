@@ -24,5 +24,5 @@ GetGrab | bool | Gets if the Grab binding is active or not for a binding id
 RegisterButtonClick | void | Registers a SandboxFunc to a specific binding on Button click
 RegisterButton2Click | void | Registers a SandboxFunc to a specific binding on Button2 click
 RegisterTriggerClick | void | Registers a SandboxFunc to a specific binding on Trigger click
-RegisterKeyboardClick | void Registers a SandboxFunc to a specific [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) on click
+RegisterKeyboardClick | void | Registers a SandboxFunc to a specific [KeyCode](https://docs.unity3d.com/ScriptReference/KeyCode.html) on click
 RegisterMouseClick | void | Registers a SandboxFunc to a specific [mouseId](https://docs.unity3d.com/ScriptReference/Input.GetMouseButtonDown.html) on mouse click

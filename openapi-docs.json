@@ -718,10 +718,10 @@
         },
         "/changeEmail": {
             "post": {
-                "summary": "verifyEmailToken",
-                "description": "Verifies an email token from an email verification",
+                "summary": "changeEmail",
+                "description": "Changes an email whether it is verified or not",
                 "requestBody": {
-                    "description": "Information required to check a token is valid",
+                    "description": "Information required to change an email",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -764,6 +764,1464 @@
                                         "result": {
                                             "description": "The result of the server response",
                                             "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/enable2fa": {
+            "post": {
+                "summary": "enable2fa",
+                "description": "Enables 2FA to be used on an account",
+                "requestBody": {
+                    "description": "Information required to enable 2FA",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "otpauth_url":{
+                                                    "description": "The URL for the OTP",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/verify2fa": {
+            "post": {
+                "summary": "verify2fa",
+                "description": "Verifies if a 2FA code is correct",
+                "requestBody": {
+                    "description": "Information required to verify a 2FA code",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "code": {
+                                        "description": "The 2FA code",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "code"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "If the 2FA code could be verified",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/remove2fa": {
+            "post": {
+                "summary": "remove2fa",
+                "description": "Removes 2FA from an account if it is enabled",
+                "requestBody": {
+                    "description": "Information required to remove 2FA",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/requestPasswordReset": {
+            "post": {
+                "summary": "requestPasswordReset",
+                "description": "Sends a Password Reset to a registered email (if it's verified)",
+                "requestBody": {
+                    "description": "Information required to change an email",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "email": {
+                                        "description": "The verified email to send a password reset to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["email"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/resetPassword": {
+            "post": {
+                "summary": "resetPassword",
+                "description": "Changes a password from a password reset email or from a token",
+                "requestBody": {
+                    "description": "Information required to reset a password",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content (if resetting from token)",
+                                        "type": "string"
+                                    },
+                                    "passwordResetContent": {
+                                        "description": "The new password reset token from an email (if resetting from email)",
+                                        "type": "string"
+                                    },
+                                    "newPassword": {
+                                        "description": "The new password to be set to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "newPassword"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/updateBio": {
+            "post": {
+                "summary": "updateBio",
+                "description": "Updates a user's bio",
+                "requestBody": {
+                    "description": "Information required to update a bio",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "bio": {
+                                        "description": "The new bio",
+                                        "type": "object",
+                                        "properties": {
+                                            "isPrivateAccount": {
+                                                "description": "If the account is private",
+                                                "type": "boolean"
+                                            },
+                                            "Status": {
+                                                "description": "A status indicator represented from 1-6",
+                                                "type": "integer"
+                                            },
+                                            "StatusText": {
+                                                "description": "The user generated status",
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "description": "A user's description",
+                                                "type": "string"
+                                            },
+                                            "PfpURL": {
+                                                "description": "The URL for a profile picture (restrictions configurable by server)",
+                                                "type": "string"
+                                            },
+                                            "BannerURL": {
+                                                "description": "The URL for a profile banner (restrictions configurable by server)",
+                                                "type": "string"
+                                            },
+                                            "DisplayName": {
+                                                "description": "An optional Display Name for a user",
+                                                "type": "string"
+                                            },
+                                            "Pronouns": {
+                                                "description": "Either an object to define set, or \"remove\" to remove pronouns",
+                                                "type": "object",
+                                                "properties": {
+                                                    "nominativeId": {
+                                                        "description": "The id for the nominative pronoun",
+                                                        "type": "integer"
+                                                    },
+                                                    "accusativeId": {
+                                                        "description": "The id for the accusative pronoun",
+                                                        "type": "integer"
+                                                    },
+                                                    "reflexiveId": {
+                                                        "description": "The id for the reflexive pronoun",
+                                                        "type": "integer"
+                                                    },
+                                                    "independentId": {
+                                                        "description": "The id for an independent pronoun",
+                                                        "type": "integer"
+                                                    },
+                                                    "dependentId": {
+                                                        "description": "The id for a dependent pronoun",
+                                                        "type": "integer"
+                                                    },
+                                                    "DisplayThree": {
+                                                        "description": "Whether or not to display three pronoun cases instead of two (such as He/Him/Himself)",
+                                                        "type": "boolean"
+                                                    },
+                                                    "firstCase": {
+                                                        "description": "The first case id to be shown",
+                                                        "type": "integer"
+                                                    },
+                                                    "secondCase": {
+                                                        "description": "The second case id to be shown",
+                                                        "type": "integer"
+                                                    },
+                                                    "thirdCase": {
+                                                        "description": "The third case id to be shown",
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["userid", "tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/blockUser": {
+            "post": {
+                "summary": "blockUser",
+                "description": "Blocks a user by their UserId",
+                "requestBody": {
+                    "description": "Information required to block a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/unblockUser": {
+            "post": {
+                "summary": "blockUser",
+                "description": "Unblocks a user by their UserId",
+                "requestBody": {
+                    "description": "Information required to unblock a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/followUser": {
+            "post": {
+                "summary": "followUser",
+                "description": "Follows a user by their UserId",
+                "requestBody": {
+                    "description": "Information required to follow a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/unfollowUser": {
+            "post": {
+                "summary": "unfollowUser",
+                "description": "Unfollows a user by their UserId",
+                "requestBody": {
+                    "description": "Information required to unfollow a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/sendFriendRequest": {
+            "post": {
+                "summary": "sendFriendRequest",
+                "description": "Sends a friend request to a user by their UserId",
+                "requestBody": {
+                    "description": "Information required to send a friend request to a user",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/acceptFriendRequest": {
+            "post": {
+                "summary": "acceptFriendRequest",
+                "description": "Accepts a user's friend request by their UserId",
+                "requestBody": {
+                    "description": "Information required to accept a user's friend request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/declineFriendRequest": {
+            "post": {
+                "summary": "declineFriendRequest",
+                "description": "Declines a user's friend request by their UserId",
+                "requestBody": {
+                    "description": "Information required to decline a user's friend request",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/removeFriend": {
+            "post": {
+                "summary": "removeFriend",
+                "description": "Removes a user as a friend by their UserId",
+                "requestBody": {
+                    "description": "Information required to remove a user as a friend",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/upload": {
+            "post": {
+                "summary": "upload",
+                "description": "Uploads an allowed file to the server",
+                "requestBody": {
+                    "description": "Information required to upload a file",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "file": {"description": "The file being uploaded (from a form)"},
+                                    "avatarMeta": {
+                                        "description": "The avatarMeta if the upload is an avatar",
+                                        "type": "object",
+                                        "properties": {
+                                            "Publicity": {
+                                                "description": "The publicity of an avatar represented as an integer from 0-1",
+                                                "type": "integer"
+                                            },
+                                            "Name": {
+                                                "description": "The name of the avatar",
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "description": "The avatar's description",
+                                                "type": "string"
+                                            },
+                                            "Tags": {
+                                                "description": "The avatar's tags",
+                                                "type": "array"
+                                            },
+                                            "ImageURL": {
+                                                "description": "The Image URL for an avatar",
+                                                "type": "string"
+                                            },
+                                            "BuildPlatform": {
+                                                "description": "The BuildPlatform for the file being uploaded along with the avatarMeta",
+                                                "type": "integer"
+                                            },
+                                            "Id": {
+                                                "description": "The Id of an existing avatar being overwritten or added to",
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "worldMeta": {
+                                        "description": "The worldMeta if the upload is a world",
+                                        "type": "object",
+                                        "properties": {
+                                            "Publicity": {
+                                                "description": "The publicity of an world represented as an integer from 0-1",
+                                                "type": "integer"
+                                            },
+                                            "Name": {
+                                                "description": "The name of the world",
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "description": "The world's description",
+                                                "type": "string"
+                                            },
+                                            "Tags": {
+                                                "description": "The world's tags",
+                                                "type": "array"
+                                            },
+                                            "ThumbnailURL": {
+                                                "description": "The Thumbnail URL for a world",
+                                                "type": "string"
+                                            },
+                                            "IconURLs": {
+                                                "description": "An array of Image URLs as icons for a world",
+                                                "type": "array"
+                                            },
+                                            "ServerScripts": {
+                                                "description": "An array of Script URLs as ServerScripts for a world",
+                                                "type": "array"
+                                            },
+                                            "BuildPlatform": {
+                                                "description": "The BuildPlatform for the file being uploaded along with the worldMeta",
+                                                "type": "integer"
+                                            },
+                                            "Id": {
+                                                "description": "The Id of an existing world being overwritten or added to",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "file"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/uploadPart": {
+            "post": {
+                "summary": "uploadPart",
+                "description": "Uploads part of an allowed file to the server",
+                "requestBody": {
+                    "description": "Information required to upload part of a file",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "file": {"description": "The file being uploaded (from a form)"},
+                                    "originalFileName": {
+                                        "description": "The original file's name",
+                                        "type": "string"
+                                    },
+                                    "chunkNumber": {
+                                        "description": "The current chunk of a part to upload",
+                                        "type": "integer"
+                                    },
+                                    "amountOfChunks": {
+                                        "description": "The total amount of chunks as calculated by the client",
+                                        "type": "integer"
+                                    },
+                                    "chunkId": {
+                                        "description": "The assigned upload part id given after the first chunk is uploaded",
+                                        "type": "string"
+                                    },
+                                    "avatarMeta": {
+                                        "description": "The avatarMeta if the upload is an avatar",
+                                        "type": "object",
+                                        "properties": {
+                                            "Publicity": {
+                                                "description": "The publicity of an avatar represented as an integer from 0-1",
+                                                "type": "integer"
+                                            },
+                                            "Name": {
+                                                "description": "The name of the avatar",
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "description": "The avatar's description",
+                                                "type": "string"
+                                            },
+                                            "Tags": {
+                                                "description": "The avatar's tags",
+                                                "type": "array"
+                                            },
+                                            "ImageURL": {
+                                                "description": "The Image URL for an avatar",
+                                                "type": "string"
+                                            },
+                                            "BuildPlatform": {
+                                                "description": "The BuildPlatform for the file being uploaded along with the avatarMeta",
+                                                "type": "integer"
+                                            },
+                                            "Id": {
+                                                "description": "The Id of an existing avatar being overwritten or added to",
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "worldMeta": {
+                                        "description": "The worldMeta if the upload is a world",
+                                        "type": "object",
+                                        "properties": {
+                                            "Publicity": {
+                                                "description": "The publicity of an world represented as an integer from 0-1",
+                                                "type": "integer"
+                                            },
+                                            "Name": {
+                                                "description": "The name of the world",
+                                                "type": "string"
+                                            },
+                                            "Description": {
+                                                "description": "The world's description",
+                                                "type": "string"
+                                            },
+                                            "Tags": {
+                                                "description": "The world's tags",
+                                                "type": "array"
+                                            },
+                                            "ThumbnailURL": {
+                                                "description": "The Thumbnail URL for a world",
+                                                "type": "string"
+                                            },
+                                            "IconURLs": {
+                                                "description": "An array of Image URLs as icons for a world",
+                                                "type": "array"
+                                            },
+                                            "ServerScripts": {
+                                                "description": "An array of Script URLs as ServerScripts for a world",
+                                                "type": "array"
+                                            },
+                                            "BuildPlatform": {
+                                                "description": "The BuildPlatform for the file being uploaded along with the worldMeta",
+                                                "type": "integer"
+                                            },
+                                            "Id": {
+                                                "description": "The Id of an existing world being overwritten or added to",
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "file", "chunkNumber", "amountOfChunks"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "chunkNumber": {
+                                                    "description": "The next chunk number as calculated by the server",
+                                                    "type": "integer"
+                                                },
+                                                "chunkId": {
+                                                    "description": "The assigned chunkId",
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/remove/avatar": {
+            "post": {
+                "summary": "remove/avatar",
+                "description": "Removes an avatar by its id",
+                "requestBody": {
+                    "description": "Information required to remove an avatar by its id",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "avatarid": {
+                                        "description": "The avatar's id to remove",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "avatarid"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/remove/world": {
+            "post": {
+                "summary": "remove/world",
+                "description": "Removes a world by its id",
+                "requestBody": {
+                    "description": "Information required to remove a world by its id",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "worldid": {
+                                        "description": "The world's id to remove",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "worldid"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/remove/file": {
+            "post": {
+                "summary": "remove/file",
+                "description": "Removes a file by its id",
+                "requestBody": {
+                    "description": "Information required to remove a file by its id",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "fileid": {
+                                        "description": "The file's id to remove",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "fileid"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/user/{username}":{
+            "get":{
+                "summary": "/search/user/username",
+                "description": "Searches for UserIds that match or are similar to a username provided",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "username",
+                        "description": "The username to search for",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Candidates": {
+                                                    "description": "The resulting UserIds",
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/avatar/{name}/{itemsPerPage}/{pageNumber}":{
+            "get":{
+                "summary": "/search/avatar/name",
+                "description": "Searches for an avatar based on its name",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "The name to search for",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page. Limited to 50 or below",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "pageNumber",
+                        "description": "The selected page number",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Candidates": {
+                                                    "description": "The resulting AvatarIds",
+                                                    "type": "array"
+                                                }
+                                            }
                                         }
                                     },
                                     "required": ["success", "message"]
