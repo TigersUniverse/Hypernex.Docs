@@ -29,4 +29,4 @@ Intersects | bool | Checks if another bounding box intersects with this bounding
 IntersectRay | bool | Checks if the ray intersects this bounding box
 Contains | bool | Checks if the point is contained in the bounding box
 SqrDistance | float | Gets the smallest squared distance between the point and this bounding box
-ClosestPoint | [float3](../float/index.md) | Gets the closest point on the bounding box
+ClosestPoint | [float3](../float3/index.md) | Gets the closest point on the bounding box
