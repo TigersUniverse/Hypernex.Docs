@@ -37,5 +37,5 @@ GetDropdown | int | Gets the current value of a dropdown attached to an item
 RegisterDropdownValueChanged | void | Registers a value change from a dropdown attached to an item to call a SandboxFunc
 RemoveAllDropdownValueChanged | void | Removes all dropdown value changes from a dropdown attached to an item
 SetDropdown | void | Sets the dropwdown value on a dropdown attached to an item
-GetColorBlock | [ColorBlock](../colorblock) | Gets a ColorBlock from supported components attached to an Item
+GetColorBlock | [ColorBlock](../colorblock/index.md) | Gets a ColorBlock from supported components attached to an Item
 SetColorBlock | void | Sets a ColorBlock of a supported component attached to an Item

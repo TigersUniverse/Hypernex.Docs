@@ -12,11 +12,11 @@ Represents an axis aligned bounding box.
 
 Property Name | Property Type | Description
 --- | --- | ---
-center | [float3](../float3) | The center of the bounding box
-size | [float3](../float3) | The total size of the box
-extents | [float3](../float3) | The extents of the bounding box
-min | [float3](../float3) | The minimal point of the box
-max | [float3](../float3) | The maximal point of the box
+center | [float3](../float3/index.md) | The center of the bounding box
+size | [float3](../float3/index.md) | The total size of the box
+extents | [float3](../float3/index.md) | The extents of the bounding box
+min | [float3](../float3/index.md) | The minimal point of the box
+max | [float3](../float3/index.md) | The maximal point of the box
 
 **Instance Methods**
 
@@ -29,4 +29,4 @@ Intersects | bool | Checks if another bounding box intersects with this bounding
 IntersectRay | bool | Checks if the ray intersects this bounding box
 Contains | bool | Checks if the point is contained in the bounding box
 SqrDistance | float | Gets the smallest squared distance between the point and this bounding box
-ClosestPoint | [float3](../float3) | Gets the closest point on the bounding box
+ClosestPoint | [float3](../float/index.md) | Gets the closest point on the bounding box

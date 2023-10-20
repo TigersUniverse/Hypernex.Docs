@@ -8,6 +8,6 @@ Opens the WebSocket connection
 
 :::note
 
-You have to invoke [WebSocket.Create](./create) before using this method!
+You have to invoke [WebSocket.Create](./create.md) before using this method!
 
 :::

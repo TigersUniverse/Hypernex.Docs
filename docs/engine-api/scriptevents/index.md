@@ -12,4 +12,4 @@ Provides tools for subscribing to certain events for the World and GameServer.
 
 Method Name | Return Type | Description
 --- | --- | ---
-[Subscribe](subscribe) | void | Subscribes a SandboxFunc to a [ScriptEvent](../scriptevent)
+[Subscribe](subscribe.md) | void | Subscribes a SandboxFunc to a [ScriptEvent](../scriptevent/index.md)

@@ -1,6 +1,6 @@
 # GetAvatarParameters
 
-The GetAvatarParameters function returns all the [AvatarParameter](./../avatarparameter)s present on an Avatar.
+The GetAvatarParameters function returns all the [AvatarParameter](./../avatarparameter/index.md)s present on an Avatar.
 
 :::caution
 

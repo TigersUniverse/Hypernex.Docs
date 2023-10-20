@@ -12,5 +12,5 @@ The JSON module provides useful JSON tools specifically for JavaScript.
 
 Method Name | Return Type | Description
 --- | --- | ---
-[parse](parse) | Object, Array, string, number, boolean, or `null` | Parses a JSON string into a lua table
-[stringify](stringify) | string | Serializes an object into a JSON string
+[parse](parse.md) | Object, Array, string, number, boolean, or `null` | Parses a JSON string into a lua table
+[stringify](stringify.md) | string | Serializes an object into a JSON string

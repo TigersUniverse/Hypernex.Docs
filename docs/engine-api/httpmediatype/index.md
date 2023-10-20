@@ -1,6 +1,6 @@
 # HttpMediaType
 
-Defines what a string data is to be used for a [Post](../http/post) request.
+Defines what a string data is to be used for a [Post](../http/post.md) request.
 
 **Enums**
 

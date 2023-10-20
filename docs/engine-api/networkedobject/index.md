@@ -13,8 +13,8 @@ A Data object for forwarding simple transform information to the server.
 
 Property Name | Property Type | Default Value | Property Description
 --- | --- | --- | ---
-[ObjectLocation](objectlocation) | string | String.Empty | The location of an Object in a scene (For Hierarchy-based games only).
-[IgnoreObjectLocation](ignoreobjectlocation) | bool | false | Whether or not to use ObjectLocation (This needs to be handled in the backend for non-hierarchy game engines).
-[Position](position) | [float3](../float3/) | `(0, 0, 0)` | The Position of the NetworkedObject
-[Rotation](rotation) | [float4](../float4/) | `(0, 0, 0, 0)` The Rotation of the NetworkedObject
-[Size](size) | [float3](../float3/) | `(0, 0, 0)` | The Size of the NetworkedObject
+[ObjectLocation](objectlocation.md) | string | String.Empty | The location of an Object in a scene (For Hierarchy-based games only).
+[IgnoreObjectLocation](ignoreobjectlocation.md) | bool | false | Whether or not to use ObjectLocation (This needs to be handled in the backend for non-hierarchy game engines).
+[Position](position.md) | [float3](../float3/index.md) | `(0, 0, 0)` | The Position of the NetworkedObject
+[Rotation](rotation.md) | [float4](../float4/index.md) | `(0, 0, 0, 0)` The Rotation of the NetworkedObject
+[Size](size.md) | [float3](../float3/index.md) | `(0, 0, 0)` | The Size of the NetworkedObject

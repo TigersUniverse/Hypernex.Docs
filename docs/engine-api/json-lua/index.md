@@ -12,7 +12,7 @@ The JSON module provides useful JSON tools specifically for lua.
 
 Method Name | Return Type | Description
 --- | --- | ---
-[parse](parse) | Table | Parses a JSON string into a lua table
-[serialize](serialize) | string | Serializes a Table into a JSON string
-[isNull](isnull) | bool | Returns true if the value specified is a null read from a json
-[null](null) | object | Returns a null object for Tables to be represented correctly in JSON
+[parse](parse.md) | Table | Parses a JSON string into a lua table
+[serialize](serialize.md) | string | Serializes a Table into a JSON string
+[isNull](isnull.md) | bool | Returns true if the value specified is a null read from a json
+[null](null.md) | object | Returns a null object for Tables to be represented correctly in JSON

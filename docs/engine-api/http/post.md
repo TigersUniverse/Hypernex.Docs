@@ -12,9 +12,9 @@ Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
 url | string | The URL to send the POST request to
 data | string | The Data to send to the URL
-mediaType | [HttpMediaType](./../httpmediatype) | The MediaType of the data provided
+mediaType | [HttpMediaType](./../httpmediatype/index.md) | The MediaType of the data provided
 
-The following example gets a User from an example Hypernex API Server (assuming `localhost`), parses the json (see [JSON (Lua)](../../json-lua)/[JSON (JavaScript)](../../json-js)), then prints the Username.
+The following example gets a User from an example Hypernex API Server (assuming `localhost`), parses the json (see [JSON (Lua)](./../json-lua/index.md)/[JSON (JavaScript)](./../json-js/index.md)), then prints the Username.
 
 **JavaScript**
 ```js

@@ -1,12 +1,12 @@
 # Subscribe
 
-Listens for a specific event defined by [ScriptEvent](./../scriptevent) and invokes a SandboxFunc.
+Listens for a specific event defined by [ScriptEvent](./../scriptevent/index.md) and invokes a SandboxFunc.
 
 **Parameters**
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-scriptEvent | [ScriptEvent](./../scriptevent) | The ScriptEvent to listen to
+scriptEvent | [ScriptEvent](./../scriptevent/index.md) | The ScriptEvent to listen to
 callback | SandboxFunc | The function to invoke when the event is raised
 
 The following example listens for a NetworkedEvent sent from a client, and forwards it to other clients.

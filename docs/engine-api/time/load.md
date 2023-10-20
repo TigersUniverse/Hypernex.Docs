@@ -37,7 +37,7 @@ milisecond | int | The target millisecond
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-u | [UtcTime](./../utctime) | The UtcTime to convert to Local Time
+u | [UtcTime](./../utctime/index.md) | The UtcTime to convert to Local Time
 
 The following example Loads the Date January 1st, 2012
 

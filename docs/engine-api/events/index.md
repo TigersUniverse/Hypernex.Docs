@@ -10,4 +10,4 @@ All Methods/Properties are available on both the server and the client; however,
 
 Method Name | Return Type | Description
 --- | --- | ---
-[Subscribe](subscribe) | void | Subscribe to a [ScriptEvent](../scriptevent) with a SandboxFunc
+[Subscribe](subscribe) | void | Subscribe to a [ScriptEvent](../scriptevent/index.md) with a SandboxFunc

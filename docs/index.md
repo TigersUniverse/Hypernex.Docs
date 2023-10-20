@@ -7,10 +7,10 @@
 
 :::
 
-## [Engine API](./engine-api)
+## [Engine API](./engine-api/index.md)
 
 The Engine API for Hypernex.Unity.
 
-## [Cloud API](./cloud-api)
+## [Cloud API](/docs/cloud-api)
 
 The Cloud API for Hypernex.API.

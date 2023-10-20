@@ -1,12 +1,12 @@
 # Subscribe
 
-Subscribes a SandboxFunc to a [ScriptEvent](./../scriptevent)
+Subscribes a SandboxFunc to a [ScriptEvent](./../scriptevent/index.md)
 
 **Parameters**
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-scriptEvent | [ScriptEvent](./../scriptevent) | The [ScriptEvent](./../scriptevent) to listen for
+scriptEvent | [ScriptEvent](./../scriptevent/index.md) | The [ScriptEvent](./../scriptevent/index.md) to listen for
 callback | SandboxFunc | The function to call
 
 The example below listens for a user to join, then prints their name and pronouns.
