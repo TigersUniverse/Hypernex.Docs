@@ -23,7 +23,7 @@ DisplayThree | bool | Whether to display the Nominative, Accusative, and Reflexi
 
 Method Name | Return Type | Description
 --- | --- | ---
-GetPronounObjectById | [PronounObject](../pronounobject) | Gets an official Pronoun object by Id
+GetPronounObjectById | [PronounObject](../pronounobject/index.md) | Gets an official Pronoun object by Id
 
 **Instance Methods**
 
