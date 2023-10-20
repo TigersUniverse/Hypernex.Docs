@@ -12,7 +12,7 @@ Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
 val | object | The JSON value to check if it is null
 
-The following example prints "[value] is null!" if any item in the converted json (see [json.parse(string)](parse) for more information) is null
+The following example prints "[value] is null!" if any item in the converted json (see [json.parse(string)](./parse) for more information) is null
 
 ```lua
 local jsonString = "\"{\"one\": 1, \"two\": null, \"three\": \"3\"}\""

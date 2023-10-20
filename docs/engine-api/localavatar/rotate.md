@@ -18,7 +18,7 @@ This does not add to your rotation!
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-rotation | [float4](../float4/) | The rotation value to rotate to
+rotation | [float4](./../float4/) | The rotation value to rotate to
 
 The following rotates your character by 45 degrees, simulating a Snap Turn in VR.
 

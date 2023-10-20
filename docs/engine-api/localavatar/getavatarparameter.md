@@ -1,6 +1,6 @@
 # GetAvatarParameter
 
-The GetAvatarParameter function returns an [AvatarParameter](../avatarparameter). You should know what type the Parameter is when getting it to be able to properly handle it.
+The GetAvatarParameter function returns an [AvatarParameter](./../avatarparameter). You should know what type the Parameter is when getting it to be able to properly handle it.
 
 :::caution
 

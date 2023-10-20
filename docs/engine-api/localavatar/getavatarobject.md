@@ -4,8 +4,8 @@ The GetAvatarObject method returns an Item from the LocalPlayer's Avatar. It nee
 
 :::note
 
-+ Returns an [Item](../item) for **LocalAvatarScripts**
-+ Returns a [ReadonlyItem](../readonlyitem) for **LocalScripts**
++ Returns an [Item](./../item/) for **LocalAvatarScripts**
++ Returns a [ReadonlyItem](./../readonlyitem) for **LocalScripts**
 
 :::
 
@@ -13,7 +13,7 @@ The GetAvatarObject method returns an Item from the LocalPlayer's Avatar. It nee
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-humanBodyBone | [HumanBodyBones](../humanbodybones) | The HumanBodyBone to get from an Avatar
+humanBodyBone | [HumanBodyBones](./../humanbodybones) | The HumanBodyBone to get from an Avatar
 
 :::caution
 

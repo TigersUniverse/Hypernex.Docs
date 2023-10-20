@@ -37,7 +37,7 @@ milisecond | int | The target millisecond
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
-u | [Time](../time) | The Time to convert to UTC Time
+u | [Time](./../time) | The Time to convert to UTC Time
 
 The following example Loads the Date January 1st, 2012
 

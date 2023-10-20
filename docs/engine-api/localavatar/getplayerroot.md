@@ -4,14 +4,14 @@ Returns the Root Item of a Player. This is where the LocalPlayer or NetAvatar co
 
 :::note
 
-+ Returns an [Item](../item) for **LocalScripts**
-+ Returns a [ReadonlyItem](../readonlyitem) for **LocalAvatarScripts**
++ Returns an [Item](./../item) for **LocalScripts**
++ Returns a [ReadonlyItem](./../readonlyitem) for **LocalAvatarScripts**
 
 :::
 
 The following code positions the root avatar at a specified location. In this example, we assume the script is a **LocalScript**.
 
-It would be better to use [LocalAvatar.TeleportTo()](teleportto) for this scenario.
+It would be better to use [LocalAvatar.TeleportTo()](./teleportto) for this scenario.
 
 **JavaScript**
 ```js

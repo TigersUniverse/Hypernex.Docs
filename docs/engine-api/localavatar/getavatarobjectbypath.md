@@ -1,6 +1,6 @@
 # GetAvatarObjectByPath
 
-The GetAvatarObjectByPath method will return an avatar [Item](../item) (for LocalAvatarScripts) or [ReadonlyItem](../readonlyitem) (for LocalScripts) at a specified path, relative to the Avatar root.
+The GetAvatarObjectByPath method will return an avatar [Item](./../item) (for LocalAvatarScripts) or [ReadonlyItem](./../readonlyitem) (for LocalScripts) at a specified path, relative to the Avatar root.
 
 **Parameters**
 

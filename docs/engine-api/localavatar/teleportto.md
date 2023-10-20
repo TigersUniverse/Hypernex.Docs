@@ -12,7 +12,7 @@ Teleports your LocalPlayer to a specified world position
 
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ----
-position | [float3](../float3/) | The worldPosition to teleport to
+position | [float3](./../float3/) | The worldPosition to teleport to
 
 The following example teleports the player to an Item's position
 

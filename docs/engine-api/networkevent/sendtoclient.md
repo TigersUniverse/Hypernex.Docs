@@ -25,7 +25,7 @@ Parameter Name | Parameter Type | Parameter Description
 userid | string | The UserId to send the data to
 eventName | string | The name of the event to be identified
 data | object[] | An Array containing data to send.
-messageChannel | [MessageChannel](../messagechannel) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
+messageChannel | [MessageChannel](./../messagechannel) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
 
 :::note
 
@@ -34,7 +34,7 @@ messageChannel | [MessageChannel](../messagechannel) | The MessageChannel to sen
 
 :::
 
-The example below listens for the `numbers` message (see [SendToServer](sendtoserver) example), and then relays it back to the client with all the numbers plus one with the event name `newNumbers`.
+The example below listens for the `numbers` message (see [SendToServer](./sendtoserver) example), and then relays it back to the client with all the numbers plus one with the event name `newNumbers`.
 
 **JavaScript**
 ```js

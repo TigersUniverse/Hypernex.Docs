@@ -10,7 +10,7 @@ The following example demonstrates looping through each item child and printing 
 
 :::note
 
-Usually, you would want to use [ChildCount](childcount) and [GetChildByIndex](getchildbyindex) instead of iterating through Children. This is only an example.
+Usually, you would want to use [ChildCount](./childcount) and [GetChildByIndex](./getchildbyindex) instead of iterating through Children. This is only an example.
 
 :::
 

@@ -16,7 +16,7 @@ OnMessage | Delegate? | Function to be invoked when a message is received from t
 OnClose | Delegate? | Function to be invoked when the Socket closes a connection (Optional)
 OnError | Delegate? | Function to be invoked when the Socket closes a connection because of an error (Optional)
 
-The Following example opens a WebSocket, sends an open message (see [Send](send)), and handles new messages.
+The Following example opens a WebSocket, sends an open message (see [Send](./send)), and handles new messages.
 
 **JavaScript**
 ```js
