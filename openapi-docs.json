@@ -2116,7 +2116,7 @@
         },
         "/search/user/{username}":{
             "get":{
-                "summary": "/search/user/username",
+                "summary": "search/user/:username",
                 "description": "Searches for UserIds that match or are similar to a username provided",
                 "parameters": [
                     {
@@ -2166,7 +2166,7 @@
         },
         "/search/avatar/{name}/{itemsPerPage}/{pageNumber}":{
             "get":{
-                "summary": "/search/avatar/name",
+                "summary": "search/avatar/:name/:itemsPerPage/:pageNumber",
                 "description": "Searches for an avatar based on its name",
                 "parameters": [
                     {
@@ -2228,6 +2228,993 @@
                                 }
                             }
                         }
+                    }
+                }
+            }
+        },
+        "/tag/avatar/{tag}/{itemsPerPage}/{pageNumber}":{
+            "get":{
+                "summary": "tag/avatar/:name/:itemsPerPage/:pageNumber",
+                "description": "Searches for an avatar based on a tag",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "tag",
+                        "description": "The tag to search for",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page. Limited to 50 or below",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "pageNumber",
+                        "description": "The selected page number",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Candidates": {
+                                                    "description": "The resulting AvatarIds",
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/search/world/{name}/{itemsPerPage}/{pageNumber}":{
+            "get":{
+                "summary": "search/world/:name/:itemsPerPage/:pageNumber",
+                "description": "Searches for a world based on its name",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "name",
+                        "description": "The name to search for",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page. Limited to 50 or below",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "pageNumber",
+                        "description": "The selected page number",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Candidates": {
+                                                    "description": "The resulting WorldIds",
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/tag/world/{tag}/{itemsPerPage}/{pageNumber}":{
+            "get":{
+                "summary": "tag/world/:name/:itemsPerPage/:pageNumber",
+                "description": "Searches for a world based on a tag",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "tag",
+                        "description": "The tag to search for",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page. Limited to 50 or below",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "pageNumber",
+                        "description": "The selected page number",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Candidates": {
+                                                    "description": "The resulting WorldIds",
+                                                    "type": "array"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/filemeta/{userid}/{fileid}":{
+            "get":{
+                "summary": "filemeta/:userid/:fileid",
+                "description": "Gets file metadata based on id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userid",
+                        "description": "The UserId who uploaded the file",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "fileid",
+                        "description": "The FileId to get metadata of",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "FileMeta": {
+                                                    "description": "The resulting FileMeta",
+                                                    "type": "object"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/{userid}/{fileid}":{
+            "get":{
+                "summary": "file/:userid/:fileid",
+                "description": "Downloads a file from a UserId given a FileId",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userid",
+                        "description": "The UserId who uploaded the file",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "fileid",
+                        "description": "The FileId to download",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/{userid}/{fileid}/{filetoken}":{
+            "get":{
+                "summary": "file/:userid/:fileid/:filetoken",
+                "description": "Downloads a private file from a UserId given a FileId with a FileToken",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userid",
+                        "description": "The UserId who uploaded the file",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "fileid",
+                        "description": "The FileId to download",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "filetoken",
+                        "description": "The provided token to download a private file",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/file/{userid}/{fileid}/{gameServerId}/{gameServerToken}":{
+            "get":{
+                "summary": "file/:userid/:fileid/:gameServerId/:gameServerToken",
+                "description": "Downloads a file from a UserId given a FileId coming from a GameServer",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "userid",
+                        "description": "The UserId who uploaded the file",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "fileid",
+                        "description": "The FileId to download",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "gameServerId",
+                        "description": "The GameServerId",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "gameServerToken",
+                        "description": "The GameServerId's Token",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/meta/avatar/{avatarid}":{
+            "get":{
+                "summary": "meta/avatar/:avatarid",
+                "description": "Gets avatar meta from a provided avatarid",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "avatarid",
+                        "description": "The AvatarId to get meta of",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Meta": {
+                                                    "description": "The AvatarMeta",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Publicity": {
+                                                            "description": "The publicity of an avatar",
+                                                            "type": "integer"
+                                                        },
+                                                        "Name": {
+                                                            "description": "The name of the avatar",
+                                                            "type": "string"
+                                                        },
+                                                        "Description": {
+                                                            "description": "The avatar's description",
+                                                            "type": "string"
+                                                        },
+                                                        "Tags": {
+                                                            "description": "The avatar's tags",
+                                                            "type": "array"
+                                                        },
+                                                        "ImageURL": {
+                                                            "description": "The Image URL for an avatar",
+                                                            "type": "string"
+                                                        },
+                                                        "Builds": {
+                                                            "description": "The builds for an avatar",
+                                                            "type": "array",
+                                                            "properties": {
+                                                                "FileId": {
+                                                                    "description": "The Id of the File",
+                                                                    "type": "string"
+                                                                },
+                                                                "BuildPlatform": {
+                                                                    "description": "The Platform the Build should run on",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Id": {
+                                                            "description": "The Avatar's Id",
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/meta/world/{worldid}":{
+            "get":{
+                "summary": "meta/world/:worldid",
+                "description": "Gets world meta from a provided worldid",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "worldid",
+                        "description": "The WorldId to get meta of",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Meta": {
+                                                    "description": "The WorldMeta",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "Publicity": {
+                                                            "description": "The publicity of an world represented as an integer from 0-1",
+                                                            "type": "integer"
+                                                        },
+                                                        "Name": {
+                                                            "description": "The name of the world",
+                                                            "type": "string"
+                                                        },
+                                                        "Description": {
+                                                            "description": "The world's description",
+                                                            "type": "string"
+                                                        },
+                                                        "Tags": {
+                                                            "description": "The world's tags",
+                                                            "type": "array"
+                                                        },
+                                                        "ThumbnailURL": {
+                                                            "description": "The Thumbnail URL for a world",
+                                                            "type": "string"
+                                                        },
+                                                        "IconURLs": {
+                                                            "description": "An array of Image URLs as icons for a world",
+                                                            "type": "array"
+                                                        },
+                                                        "Builds": {
+                                                            "description": "The builds for an avatar",
+                                                            "type": "array",
+                                                            "properties": {
+                                                                "FileId": {
+                                                                    "description": "The Id of the File",
+                                                                    "type": "string"
+                                                                },
+                                                                "BuildPlatform": {
+                                                                    "description": "The Platform the Build should run on",
+                                                                    "type": "integer"
+                                                                },
+                                                                "ServerScripts": {
+                                                                    "description": "A list of URLs for ServerScripts",
+                                                                    "type": "array"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Id": {
+                                                            "description": "The Id of an existing world being overwritten or added to",
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/manageAssetToken": {
+            "post": {
+                "summary": "manageAssetToken",
+                "description": "Manages AssetTokens for files such as private avatars or worlds",
+                "requestBody": {
+                    "description": "Information required to manage an AssetToken",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The UserId to apply the action to",
+                                        "type": "string"
+                                    },
+                                    "action": {
+                                        "description": "Whether to add (0) a token or remove (1) a token",
+                                        "type": "integer"
+                                    },
+                                    "assetId": {
+                                        "description": "The AssetId to apply the action to (either a WorldId or AvatarId)",
+                                        "type": "string"
+                                    },
+                                    "removeAssetToken": {
+                                        "description": "If removing an AssetToken, this is the AssetToken to remove",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "action", "assetId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/instances": {
+            "post": {
+                "summary": "instances",
+                "description": "Gets a list of instances that a user can join",
+                "requestBody": {
+                    "description": "Information required to get instances",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "SafeInstances": {
+                                                    "description": "An array of SafeInstance meta",
+                                                    "type": "array",
+                                                    "properties": {
+                                                        "GameServerId": {
+                                                            "description": "The GameServerId the instance is running on",
+                                                            "type": "string"
+                                                        },
+                                                        "InstanceId": {
+                                                            "description": "The Id of the instance",
+                                                            "type": "string"
+                                                        },
+                                                        "InstanceCreatorId": {
+                                                            "description": "The UserId of the user who created the instance",
+                                                            "type": "string"
+                                                        },
+                                                        "InstancePublicity": {
+                                                            "description": "The publicity of the instance",
+                                                            "type": "integer"
+                                                        },
+                                                        "InstanceProtocol": {
+                                                            "description": "The networking protocol of the instance",
+                                                            "type": "string"
+                                                        },
+                                                        "ConnectedUsers": {
+                                                            "description": "An array of UserIds that are connected to an instance",
+                                                            "type": "array"
+                                                        },
+                                                        "WorldId": {
+                                                            "description": "The WorldId that the instance is hosting",
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/instances/{worldid}":{
+            "get":{
+                "summary": "instances/:worldid",
+                "description": "Gets a list of public instances a world is hosting",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "worldid",
+                        "description": "The WorldId to get instances of",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Meta": {
+                                                    "description": "The WorldMeta",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "SafeInstances": {
+                                                            "description": "An array of SafeInstance meta",
+                                                            "type": "array",
+                                                            "properties": {
+                                                                "GameServerId": {
+                                                                    "description": "The GameServerId the instance is running on",
+                                                                    "type": "string"
+                                                                },
+                                                                "InstanceId": {
+                                                                    "description": "The Id of the instance",
+                                                                    "type": "string"
+                                                                },
+                                                                "InstanceCreatorId": {
+                                                                    "description": "The UserId of the user who created the instance",
+                                                                    "type": "string"
+                                                                },
+                                                                "InstancePublicity": {
+                                                                    "description": "The publicity of the instance",
+                                                                    "type": "integer"
+                                                                },
+                                                                "InstanceProtocol": {
+                                                                    "description": "The networking protocol of the instance",
+                                                                    "type": "string"
+                                                                },
+                                                                "ConnectedUsers": {
+                                                                    "description": "An array of UserIds that are connected to an instance",
+                                                                    "type": "array"
+                                                                },
+                                                                "WorldId": {
+                                                                    "description": "The WorldId that the instance is hosting",
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/gameServers":{
+            "get":{
+                "summary": "instances/:worldid",
+                "description": "Gets a list of public instances a world is hosting",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "worldid",
+                        "description": "The WorldId to get instances of",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "GameServers": {
+                                                    "description": "An array of GameServers that are public",
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "SafeInstances": {
+                                                            "description": "An array of SafeInstance meta",
+                                                            "type": "array",
+                                                            "properties": {
+                                                                "GameServerId": {
+                                                                    "description": "The GameServerId the instance is running on",
+                                                                    "type": "string"
+                                                                },
+                                                                "Region": {
+                                                                    "description": "The Id of the instance",
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "ContinentCode": {
+                                                                            "description": "The abbreviation for a continent",
+                                                                            "type": "string"
+                                                                        },
+                                                                        "City": {
+                                                                            "description": "The city the GameServer resides in",
+                                                                            "type": "string"
+                                                                        },
+                                                                        "State": {
+                                                                            "description": "The state the GameServer resides in",
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Country": {
+                                                                            "description": "The country the GameServer resides in",
+                                                                            "type": "string"
+                                                                        },
+                                                                        "Latitude": {
+                                                                            "description": "The Latitude of the GameServer",
+                                                                            "type": "integer"
+                                                                        },
+                                                                        "Longitude": {
+                                                                            "description": "The Longitude of the GameServer",
+                                                                            "type": "integer"
+                                                                        }
+                                                                    },
+                                                                    "required": ["ContinentCode"]
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/randomImage":{
+            "get":{
+                "summary": "randomImage",
+                "description": "Gets a featured random image",
+                "responses": {
+                    "200": {
+                        "description": "A successful request"
                     }
                 }
             }
