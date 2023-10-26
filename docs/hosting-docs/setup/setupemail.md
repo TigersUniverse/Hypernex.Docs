@@ -79,8 +79,11 @@ Do not have multiple keys! If there is already a socket, either remove it, or co
 :::
 
 `Domain [DOMAIN]` (include subdomain(s))
+
 `KeyFile /etc/opendkim/default.private`
+
 `Selector default`
+
 `Socket inet:8891@[SUBDOMAIN/DOMAIN]` (If your domain is something like `play.hypernex.dev`, then you would input `play`, otherwise, just `hypernex`. Should be a hostname)
 
 :::note
