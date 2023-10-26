@@ -14,3 +14,7 @@ The Engine API for Hypernex.Unity.
 ## [Cloud API](/docs/cloud-api)
 
 The Cloud API for Hypernex.API.
+
+## [Hosting Docs](/docs/hosting-docs/index.md)
+
+Documentation and Guides for server hosters.
