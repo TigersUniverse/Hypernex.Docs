@@ -36,3 +36,4 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: ${{ secrets.DOCUACTIONS_DEPLOYMENT }}
           publish_dir: ./build
+          cname: docs.hypernex.dev
