@@ -12,18 +12,18 @@ The example below listens for a user to join, then prints their name and pronoun
 
 **JavaScript**
 ```js
-Events.Subscribe(ScriptEvent.OnUserJoin, userid => {
+Events.Subscribe(ScriptEvent.OnUserJoin, new SandboxFunc(engine).SetAction(userid => {
     let pronouns = Players.GetPronouns(userid)
     if(pronouns === null || pronouns === undefined) return
     print(Players.GetUsername(userid) + " has joined, say hi to " + pronouns.AccusativeCase + "!")
-})
+}))
 ```
 
 **Lua**
 ```lua
-Events.Subscribe(ScriptEvent.OnUserJoin, function(userid)
+Events.Subscribe(ScriptEvent.OnUserJoin, SandboxFunc().SetAction(function(userid)
     local pronouns = Players.GetPronouns(userid)
     if pronouns == nil then return end
     print(Players.GetUsername(userid).." has joined, say hi to "..pronouns.AccusativeCase.."!")
-end)
+end))
 ```

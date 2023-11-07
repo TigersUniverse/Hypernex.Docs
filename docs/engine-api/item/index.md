@@ -30,6 +30,7 @@ Parent | Item | Gets or Sets the Item's parent
 [ChildCount](childcount.md) | int | Gets the amount of children under a Transform
 [Children](children.md) | Item[] | Gets all the children of an Item
 CanCollide | bool | Gets or Sets the collision ability of a Collider attached to an Item
+Path | string | Gets the Item's path in the hierarchy (Readonly)
 
 **Instance Methods**
 

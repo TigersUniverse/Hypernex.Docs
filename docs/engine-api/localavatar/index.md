@@ -33,3 +33,4 @@ IsLocalPlayerId | bool | Returns true if the UserId provided is the LocalPlayer'
 Scale | void | Scales the avatar by a scale factor
 [GetPronouns](getpronouns.md) | [Pronouns](../pronouns/index.md) | Gets a Player's Pronouns
 SetAvatar | void | Sets the user's avatar
+IsHost | bool | Gets whether or not the LocalAvatar is a host or not

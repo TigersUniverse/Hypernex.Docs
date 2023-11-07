@@ -30,3 +30,4 @@ SetVolume | void | Sets the volume property of an AudioSource
 GetPosition | float | Gets the position property of an AudioSource
 SetPosition | void | Sets the position property of an AudioSource
 GetLength | float | Gets the length property of an AudioSource's clip
+LoadFromCobalt | void | Loads data from a [CobaltDownload](./../cobaltdownload/index.md) to an AudioSource

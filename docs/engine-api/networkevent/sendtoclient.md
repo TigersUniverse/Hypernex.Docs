@@ -38,7 +38,7 @@ The example below listens for the `numbers` message (see [SendToServer](./sendto
 
 **JavaScript**
 ```js
-Events.Subscribe(ScriptEvent.OnUserNetworkEvent, (userId, eventName, eventArgs) => {
+Events.Subscribe(ScriptEvent.OnUserNetworkEvent, new SandboxFunc(engine).SetAction((userId, eventName, eventArgs) => {
     if(eventArgs === undefined)
         return
     switch(eventName){
@@ -52,12 +52,12 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, (userId, eventName, eventArgs) 
             break
         }
     }
-})
+}))
 ```
 
 **Lua**
 ```lua
-Events.Subscribe(ScriptEvent.OnUserNetworkEvent, function(userId, eventName, eventArgs)
+Events.Subscribe(ScriptEvent.OnUserNetworkEvent, SanboxFunc().SetAction(function(userId, eventName, eventArgs)
     if eventArgs == nil then return end
     if eventName == "numbers" then
         local newData = {}
@@ -66,5 +66,5 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, function(userId, eventName, eve
         end
         NetworkEvent.SendToClient(userId, "newNumbers", newData)
     end
-end)
+end))
 ```

@@ -37,7 +37,7 @@ The following example relays data from `clientTeam` to the rest of the clients o
 
 **JavaScript**
 ```js
-Events.Subscribe(ScriptEvent.OnUserNetworkEvent, (userId, eventName, eventArgs) => {
+Events.Subscribe(ScriptEvent.OnUserNetworkEvent, new SandboxFunc(engine).SetAction((userId, eventName, eventArgs) => {
     if(eventArgs === undefined)
         return
     switch(eventName){
@@ -47,17 +47,17 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, (userId, eventName, eventArgs) 
             NetworkEvent.SendToAllClients("clientTeam", dataToSend)
         }
     }
-})
+}))
 ```
 
 **Lua**
 ```lua
-Events.Subscribe(ScriptEvent.OnUserNetworkEvent, function(userId, eventName, eventArgs)
+Events.Subscribe(ScriptEvent.OnUserNetworkEvent, SandboxFunc().SetAction(function(userId, eventName, eventArgs)
     if eventArgs == nil then return end
     if eventName == "clientTeam" then
         local team = eventArgs[0]
         local dataToSend = {userId, team}
         NetworkEvent.SendToAllClients("clientTeam", dataToSend)
     end
-end)
+end))
 ```

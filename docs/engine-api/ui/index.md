@@ -25,12 +25,14 @@ GetSlider | float | Gets the current value of a slider attached to an item
 RegisterSliderValueChanged | void | Registers a value change from a slider attached to an item to call a SandboxFunc
 RemoveAllSliderValueChanged | void | Removes all slider value changes from a slider attached to an item
 SetSlider | void | Sets the slider value on a slider attached to an item
+SetSliderRange | void | Sets the slider minimum and maximum value
 GetScrollbar | float | Gets the current value of a scrollbar attached to an item
 RegisterScrollbarValueChanged | void | Registers a value change from a scrollbar attached to an item to call a SandboxFunc
 RemoveAllScrollbarValueChanged | void | Removes all scrollbar value changes from a scrollbar attached to an item
 SetScrollbar | void | Sets the scrollbar value on a scrollbar attached to an item
 GetInputFieldText | string | Gets the current text of a input field attached to an item
 RegisterInputFieldTextChanged | void | Registers a text change from an input field attached to an item to call a SandboxFunc
+RegisterInputFieldVR | void | Allows a input field to be used while in VR
 RemoveAllInputFieldTextChanged | void | Removes all input field text changes from an input field attached to an item
 SetInputFieldText | void | Sets the input field text on an input field attached to an item
 GetDropdown | int | Gets the current value of a dropdown attached to an item
