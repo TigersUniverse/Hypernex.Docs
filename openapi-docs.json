@@ -2114,9 +2114,9 @@
                 }
             }
         },
-        "/search/user/{username}":{
+        "/search/user/{username}/{itemsPerPage}/{page}":{
             "get":{
-                "summary": "search/user/:username",
+                "summary": "search/user/:username/:itemsPerPage/:pageNumber",
                 "description": "Searches for UserIds that match or are similar to a username provided",
                 "parameters": [
                     {
@@ -2125,6 +2125,24 @@
                         "description": "The username to search for",
                         "schema": {
                             "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "page",
+                        "description": "What page?",
+                        "schema": {
+                            "type": "integer"
                         },
                         "required": true
                     }
@@ -3192,6 +3210,246 @@
                                                                         }
                                                                     },
                                                                     "required": ["ContinentCode"]
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/popularity/world/{popularityType}/{itemsPerPage}/{page}":{
+            "get":{
+                "summary": "popularity/world/:popularityType/:itemsPerPage/:pageNumber",
+                "description": "Gets a list of popular worlds pased on the PopularityType",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "popularityType",
+                        "description": "The PopularityType to use. (0 - Hourly, 1 - Daily, 2 - Weekly, 3 - Monthly, 4 - Yearly)",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "page",
+                        "description": "What page?",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Popular": {
+                                                    "description": "The resulting Popularities",
+                                                    "type": "array",
+                                                    "properties": {
+                                                        "Hourly": {
+                                                            "description": "The Hourly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Daily": {
+                                                            "description": "The Daily Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Weekly": {
+                                                            "description": "The Weekly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Monthly": {
+                                                            "description": "The Monthly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Yearly": {
+                                                            "description": "The Yearly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/popularity/avatar/{popularityType}/{itemsPerPage}/{page}":{
+            "get":{
+                "summary": "popularity/avatar/:popularityType/:itemsPerPage/:pageNumber",
+                "description": "Gets a list of popular avatars pased on the PopularityType",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "popularityType",
+                        "description": "The PopularityType to use. (0 - Hourly, 1 - Daily, 2 - Weekly, 3 - Monthly, 4 - Yearly)",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "itemsPerPage",
+                        "description": "How many results to show per page",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "page",
+                        "description": "What page?",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Popular": {
+                                                    "description": "The resulting Popularities",
+                                                    "type": "array",
+                                                    "properties": {
+                                                        "Hourly": {
+                                                            "description": "The Hourly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Daily": {
+                                                            "description": "The Daily Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Weekly": {
+                                                            "description": "The Weekly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Monthly": {
+                                                            "description": "The Monthly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
+                                                                }
+                                                            }
+                                                        },
+                                                        "Yearly": {
+                                                            "description": "The Yearly Popularity Object",
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "Usages": {
+                                                                    "description": "The amount of usages",
+                                                                    "type": "integer"
                                                                 }
                                                             }
                                                         }
