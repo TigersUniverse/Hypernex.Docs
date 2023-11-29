@@ -1248,7 +1248,7 @@
         },
         "/unblockUser": {
             "post": {
-                "summary": "blockUser",
+                "summary": "unblockUser",
                 "description": "Unblocks a user by their UserId",
                 "requestBody": {
                     "description": "Information required to unblock a user",
