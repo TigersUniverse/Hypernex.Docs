@@ -38,7 +38,7 @@ opendkim-genkey -t -s default -d [DOMAIN]
 
 :::note
 
-Take not of where you ran this command, as a `default.txt` file will be output there, which is needed in a later step
+Take note of where you ran this command, as a `default.txt` file will be output there, which is needed in a later step
 
 :::
 
