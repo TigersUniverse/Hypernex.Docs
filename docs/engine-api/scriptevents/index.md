@@ -1,4 +1,4 @@
-# Interactables
+# ScriptEvents
 
 :::info
 
