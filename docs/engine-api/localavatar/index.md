@@ -12,6 +12,7 @@ The LocalAvatar class provides developers with a way to get simple LocalAvatar d
 
 Method Name | Return Type | Description
 --- | --- | ---
+IsLocalClient | bool | Returns true if the Avatar's root contains a LocalPlayer component
 IsLocalPlayerId | bool | Returns true if the UserId provided is the LocalPlayer's UserId
 [GetAvatarObject](getavatarobject.md) | [Item](../item/index.md) or [ReadonlyItem](../readonlyitem/index.md) | Gets an Item from the Current Avatar based on the [HumanBodyBone](../humanbodybones/index.md)
 [GetAvatarObjectByPath](getavatarobjectbypath.md) | [Item](../item/index.md) or [ReadonlyItem](../readonlyitem/index.md) | Gets an Item from the Current Avatar based on a path relative to the Avatar

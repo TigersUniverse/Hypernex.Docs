@@ -85,6 +85,7 @@ const config = {
           {to: '/docs/cloud-api', label: 'Cloud API', position: 'left'},
           {to: '/docs/engine-api', label: 'Engine API', position: 'left'},
           {to: '/docs/hosting-docs', label: 'Hosting', position: 'left'},
+          {to: '/docs/changelogs', label: 'Changelogs', position: 'right'},
           {
             href: 'https://github.com/TigersUniverse',
             label: 'GitHub',
