@@ -11,7 +11,7 @@ Represents the data for the video to get
 **Properties**
 
 Property Name | Property Type | Description
---- | --- | --- | ---
+--- | --- | --- |
 url | string | The URL of the Media to download
 vCodec | [VideoCodec](./../videocodec/index.md) | (YouTube only) The video codec to use
 vQuality | [VideoQuality](./../videoquality/index.md) | Quality of the video

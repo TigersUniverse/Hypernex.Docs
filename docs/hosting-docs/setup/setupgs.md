@@ -10,9 +10,9 @@ This guide shows you how to set up your own GameServer.
 
 There are two ways to get a build,
 
-### Downloading a Build from the Main Instance
+### Downloading a Build from GitHub
 
-You can download a build from the main Hypernex instance dashboard at [play.hypernex.dev/dashboard](https://play.hypernex.dev/dashboard)
+You can download a build from the GitHub's [latest release](https://github.com/TigersUniverse/Hypernex.Networking/releases/latest)
 
 ### Building from source
 

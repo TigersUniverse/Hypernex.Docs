@@ -3466,6 +3466,104 @@
                 }
             }
         },
+        "/moderation": {
+            "post": {
+                "summary": "moderation",
+                "description": "Manages AssetTokens for files such as private avatars or worlds",
+                "requestBody": {
+                    "description": "Information required to manage an AssetToken",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "action": {
+                                        "description": "Which action to apply to a user (addbadge, removebadge, setrank, warnuser, banuser, unbanuser, deleteavatar, deleteworld)",
+                                        "type": "integer"
+                                    },
+                                    "targetUserId": {
+                                        "description": "The target UserId to apply the moderation action to",
+                                        "type": "string"
+                                    },
+                                    "badgeName": {
+                                        "description": "The badge to add (addbadge or removebadge action)",
+                                        "type": "string"
+                                    },
+                                    "newRank": {
+                                        "description": "The new rank to give to a user (setrank action)",
+                                        "type": "integer"
+                                    },
+                                    "warnReason": {
+                                        "description": "The reason to apply a warn (warnuser action)",
+                                        "type": "string"
+                                    },
+                                    "warnDescription": {
+                                        "description": "The description to why a user was given a warning (warnuser action)",
+                                        "type": "string"
+                                    },
+                                    "banReason": {
+                                        "description": "The reason to apply a ban (banuser action)",
+                                        "type": "string"
+                                    },
+                                    "banDescription": {
+                                        "description": "The description to why a user was given a ban (banuser action)",
+                                        "type": "string"
+                                    },
+                                    "timeEnd": {
+                                        "description": "The time when the ban will end in UNIX (banuser action)",
+                                        "type": "integer"
+                                    },
+                                    "avatarId": {
+                                        "description": "The AvatarId to delete",
+                                        "type": "string"
+                                    },
+                                    "worldId": {
+                                        "description": "The WorldId to delete",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "action", "targetUserId"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
         "/randomImage":{
             "get":{
                 "summary": "randomImage",
