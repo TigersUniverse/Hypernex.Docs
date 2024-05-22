@@ -6,6 +6,7 @@
 
 **Hypernex.Unity**
 
++ [2024.05.2b](./Hypernex.Unity/2024052b.md)
 + [2024.05.1b](./Hypernex.Unity/2024051b.md)
 + [2024.02.1b](./Hypernex.Unity/2024031b.md)
 
