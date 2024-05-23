@@ -4,6 +4,10 @@
 
 + [1.4.0](./Hypernex.API/140.md)
 
+**Hypernex.Web**
+
++ [1.3.0](./Hypernex.Web/130.md)
+
 **Hypernex.Unity**
 
 + [2024.05.2b](./Hypernex.Unity/2024052b.md)
