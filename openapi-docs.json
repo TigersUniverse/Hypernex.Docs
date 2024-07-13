@@ -175,10 +175,10 @@
                 }
             }
         },
-        "/unityVersion":{
+        "/gameEngine":{
             "get":{
-                "summary": "unityVersion",
-                "description": "Gets the current Unity Version being used",
+                "summary": "gameEngine",
+                "description": "Gets the current Game Engine and its version",
                 "responses": {
                     "200": {
                         "description": "A successful request",
@@ -199,12 +199,16 @@
                                             "description": "The result of the server response",
                                             "type": "object",
                                             "properties": {
-                                                "UnityVersion": {
-                                                    "description": "The current Unity Version being used",
+                                                "GameEngine": {
+                                                    "description": "The current Game Engine being used",
+                                                    "type": "string"
+                                                },
+                                                "GameEngineVersion": {
+                                                    "description": "The current Game Engine Version being used",
                                                     "type": "string"
                                                 }
                                             },
-                                            "required": ["UnityVersion"]
+                                            "required": ["GameEngine", "GameEngineVersion"]
                                         }
                                     },
                                     "required": ["success", "message"]
