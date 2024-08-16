@@ -11,6 +11,7 @@
 
 **Hypernex.Unity**
 
++ [2024.08.1b](./Hypernex.Unity/2024081b.md)
 + [2024.07.2b](./Hypernex.Unity/2024072b.md)
 + [2024.07.1b](./Hypernex.Unity/2024071b.md)
 + [2024.05.3b](./Hypernex.Unity/2024053b.md)
@@ -20,6 +21,7 @@
 
 **Hypernex.CCK**
 
++ [1.4.2](./Hypernex.CCK/142.md)
 + [1.4.1](./Hypernex.CCK/141.md)
 + [1.4.0](./Hypernex.CCK/140.md)
 + [1.3.0](./Hypernex.CCK/130.md)

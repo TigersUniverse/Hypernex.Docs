@@ -85,6 +85,7 @@ const config = {
           {to: '/docs/cloud-api', label: 'Cloud API', position: 'left'},
           {to: '/docs/engine-api', label: 'Engine API', position: 'left'},
           {to: '/docs/hosting-docs', label: 'Hosting', position: 'left'},
+          {to: '/docs/nexadamy', label: 'Nexadamy', position: 'right'},
           {to: '/docs/changelogs', label: 'Changelogs', position: 'right'},
           {
             href: 'https://github.com/TigersUniverse',
@@ -94,7 +95,7 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        //style: 'dark',
         links: [
           {
             title: 'Docs',
@@ -111,6 +112,10 @@ const config = {
                 label: 'Hosting',
                 to: '/docs/hosting-docs',
               },
+              {
+                label: 'Nexadamy',
+                to: '/docs/nexadamy'
+              }
             ],
           },
           {
@@ -118,7 +123,11 @@ const config = {
             items: [
               {
                 label: 'Discord',
-                href: 'https://fortnite.lol/discord',
+                href: 'https://hypernex.dev/discord',
+              },
+              {
+                label: "X",
+                href: 'https://x.com/HypernexGame'
               }
             ],
           },
@@ -129,6 +138,10 @@ const config = {
                 label: 'GitHub',
                 href: 'https://github.com/TigersUniverse',
               },
+              {
+                label: 'Home',
+                href: "https://hypernex.dev"
+              }
             ],
           },
         ],
