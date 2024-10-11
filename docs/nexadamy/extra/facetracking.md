@@ -68,6 +68,7 @@ This means that the module you wish to use has not been converted to use our for
 <p>
 
 + [VRCFaceTracking-LiveLink](https://github.com/TigersUniverse/VRCFaceTracking-LiveLink) - Adds support for the Live Link app
++ [VRCFaceTracking-MeowFace](https://github.com/TigersUniverse/VRCFaceTracking-MeowFace) - Adds support for the MeowFace app
 
 </p>
 </details>
