@@ -34,7 +34,7 @@ messageChannel | [MessageChannel](./../messagechannel/index.md) | The MessageCha
 
 :::
 
-The example below listens for the `numbers` message (see [SendToServer](./sendtoserver.md) example), and then relays it back to the client with all the numbers plus one with the event name `newNumbers`.
+The example below listens for the `numbers` message (see [SendToServer](./../handlers/network/sendtoserver.md) example), and then relays it back to the client with all the numbers plus one with the event name `newNumbers`.
 
 **JavaScript**
 ```js

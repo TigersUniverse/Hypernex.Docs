@@ -23,7 +23,7 @@ Data in the object array **MUST** be serializable over the network!
 Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
 eventName | string | The name of the event to be identified
-messageChannel | [MessageChannel](./../messagechannel/index.md) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
+messageChannel | [MessageChannel](./../../messagechannel/index.md) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
 data | object[] | An Array containing data to send.
 
 :::note

@@ -13,18 +13,28 @@ The example below listens for a user to join, then prints their name and pronoun
 
 **JavaScript**
 ```js
+let Events = instance.GetHandler("Events")
+let Players = instance.GetHandler("Players")
+
 Events.Subscribe(ScriptEvent.OnUserJoin, new SandboxFunc(engine).SetAction(userid => {
-    let pronouns = Players.GetPronouns(userid)
+    let player = Players.GetPlayerFromUserId(userid)
+    if(player === undefined) return
+    let pronouns = player.Pronouns
     if(pronouns === null || pronouns === undefined) return
-    print(Players.GetUsername(userid) + " has joined, say hi to " + pronouns.AccusativeCase "!")
+    print(player.DisplayName + " has joined, say hi to " + pronouns.AccusativeCase + "!")
 }))
 ```
 
 **Lua**
 ```lua
+local Events = instance.GetHandler("Events")
+local Players = instance.GetHandler("Players")
+
 Events.Subscribe(ScriptEvent.OnUserJoin, SandboxFunc().SetAction(function(userid)
-    local pronouns = Players.GetPronouns(userid)
+    local player = Players.GetPlayerFromUserId(userid)
+    if player == nil then return end
+    local pronouns = player.Pronouns
     if pronouns == nil then return end
-    print(Players.GetUsername(userid).." has joined, say hi to "..pronouns.AccusativeCase "!")
+    print(player.DisplayName.." has joined, say hi to "..pronouns.AccusativeCase.."!")
 end))
 ```

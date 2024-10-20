@@ -12,7 +12,7 @@ Respresents collider data.
 
 Property Name | Property Type | Description
 --- | --- | ---
-item | [ReadonlyItem](../readonlyitem/index.md) | The item attached to the collision (Read only)
+item | [Item](./../item/index.md) | The item attached to the collision (Read only)
 isTrigger | bool | Specifies if the collider is configured as a trigger
 contactOffset | float | Contact offset value of the collider
 bounds | [Bounds](../bounds/index.md) | The world space bounding volume of the collider (Read only)
