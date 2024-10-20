@@ -24,5 +24,5 @@ GetAngularVelocity | [float3](./../../float3/index.md) | `none` | Gets the angul
 SetAngularVelocity | `void` | [float3](./../../float3/index.md) | Sets the RigidBody's angular velocity
 ResetCenterOfMass | `void` | `none` | Resets the RigidBody's center of mass
 GetWorldCenterOfMass | [float3](./../../float3/index.md) | `none` | Gets the RigidBody's world center of mass
-GetCenterOfMass | [float3](./../../float3/) | `none` | Gets the RigidBody's center of mass
-SetCenterOfMass | `void` | [float3](./../../float3/) | Sets the RigidBody's center of mass
+GetCenterOfMass | [float3](./../../float3/index.md) | `none` | Gets the RigidBody's center of mass
+SetCenterOfMass | `void` | [float3](./../../float3/index.md) | Sets the RigidBody's center of mass
