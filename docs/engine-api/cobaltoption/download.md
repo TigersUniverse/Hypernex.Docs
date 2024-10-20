@@ -28,9 +28,9 @@ Cobalt.GetOptions(getMedia, new SandboxFunc(engine).SetAction(options => {
             print("Failed to download!")
             return
         }
-        Audio.LoadFromCobalt(audio, file, new SandboxFunc(engine).SetAction(() => {
-            Audio.SetPosition(audio, 0)
-            Audio.Play(audio)
+        audio.LoadFromCobalt(file, new SandboxFunc(engine).SetAction(() => {
+            audio.SetPosition(0)
+            audio.Play()
         }))
     }))
 }))
@@ -54,9 +54,9 @@ Cobalt.GetOptions(getMedia, SandboxFunc().SetAction(function(options)
             print("Failed to download!")
             return
         end
-        Audio.LoadFromCobalt(audio, file, SandboxFunc().SetAction(function()
-            Audio.SetPosition(audio, 0)
-            Audio.Play(audio)
+        audio.LoadFromCobalt(file, SandboxFunc().SetAction(function()
+            audio.SetPosition(0)
+            audio.Play()
         end))
     end))
 end))

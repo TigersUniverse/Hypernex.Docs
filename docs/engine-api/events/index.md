@@ -6,6 +6,12 @@ All Methods/Properties are available on both the server and the client; however,
 
 :::
 
+:::note
+
+This ScriptEvents is for the Server. If you are looking for a Client implementation, please see the [Events Handler](./../handlers/events/index.md).
+
+:::
+
 **Static Methods**
 
 Method Name | Return Type | Description

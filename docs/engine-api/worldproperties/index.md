@@ -2,7 +2,7 @@
 
 :::info
 
-+ This static class is only available on **LocalScripts**
++ This static class is only available on **LocalScripts** and **LocalAvatarScripts**
 
 :::
 
@@ -11,7 +11,7 @@ The WorldProperties class allows LocalScripts to read/modify properties of the c
 
 :::note
 
-Upon instantiating a WorldProperties object, the current values are filled in. They will NOT be updated in realtime, you must instantiate again.
+You must get the current WorldProperties from [World.Properties](./../handlers/world/index.md)
 
 :::
 
