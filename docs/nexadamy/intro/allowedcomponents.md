@@ -72,6 +72,17 @@ World-only minimum types. Also includes the Built-In-Minimum subcategory's types
 + `UniversalAdditionalCameraData`
 + `Mirror`
 
+**SteamAudio Components**
+
++ `SteamAudioSource`
++ `SteamAudioGeometry`
++ `SteamAudioDynamicObject`
++ `SteamAudioProbeBatch`
++ `SteamAudioBakedSource`
++ `SteamAudioBakedListener`
++ `SteamAudioAmbisonicSource`
++ `SteamAudioStaticMesh`
+
 ## Scripting
 
 Includes any type of Script. Does not matter if the script is in a World/Avatar component or a separate component.

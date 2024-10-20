@@ -1,33 +1,15 @@
 # Home
 
-**Hypernex.API**
+Welcome to the Changelogs! Use the Directory on the left-hand side to select a release tag for updates!
 
-+ [1.4.1](./Hypernex.API/141.md)
-+ [1.4.0](./Hypernex.API/140.md)
+## Latest Releases
 
-**Hypernex.Web**
+### [Hypernex.API](./Hypernex.API/141.md)
 
-+ [1.3.1](./Hypernex.Web/131.md)
+### [Hypernex.CCK](./Hypernex.CCK/144.md)
 
-**Hypernex.Unity**
+### [Hypernex.Networking](./Hypernex.Networking/124.md)
 
-+ [2024.08.1b](./Hypernex.Unity/2024081b.md)
-+ [2024.07.2b](./Hypernex.Unity/2024072b.md)
-+ [2024.07.1b](./Hypernex.Unity/2024071b.md)
-+ [2024.05.3b](./Hypernex.Unity/2024053b.md)
-+ [2024.05.2b](./Hypernex.Unity/2024052b.md)
-+ [2024.05.1b](./Hypernex.Unity/2024051b.md)
-+ [2024.02.1b](./Hypernex.Unity/2024031b.md)
+### [Hypernex.Unity](./Hypernex.Unity/2024101b.md)
 
-**Hypernex.CCK**
-
-+ [1.4.2](./Hypernex.CCK/142.md)
-+ [1.4.1](./Hypernex.CCK/141.md)
-+ [1.4.0](./Hypernex.CCK/140.md)
-+ [1.3.0](./Hypernex.CCK/130.md)
-
-**Hypernex.Networking**
-
-+ [1.2.2](./Hypernex.Networking/122.md)
-+ [1.2.1](./Hypernex.Networking/121.md)
-+ [1.2.0](./Hypernex.Networking/120.md)
+### [Hypernex.Web](./Hypernex.Web/131.md)
