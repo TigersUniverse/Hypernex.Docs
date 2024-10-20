@@ -16,4 +16,4 @@ Name | Return Type | Description
 --- | --- | ---
 [SendToClient](sendtoclient.md) | void | Sends an object data array to a client (Server Only)
 [SendToAllClients](sendtoallclients.md) | void | Sends an object data array to all clients (Server Only)
-[SendToServer](sendtoserver.md) | void | Sends an object data array to the server (Client Only)
+[SendToServer](./../handlers/events/sendtoserver.md) | void | Sends an object data array to the server (Client Only)
