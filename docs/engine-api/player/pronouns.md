@@ -27,5 +27,5 @@ local Players = instance.GetHandler("Players")
 
 local uiTextObject = World.GetItemInRoot("OwnerText").GetComponent("Text")
 local pronouns = Players.LocalPlayer.Pronouns
-UI.SetText(uiTextObject, "This text is "..pronouns.IndependentGenitiveCase.."!")
+uiTextObject.SetText("This text is "..pronouns.IndependentGenitiveCase.."!")
 ```
