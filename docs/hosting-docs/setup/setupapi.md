@@ -10,7 +10,7 @@ This guide will show you how to setup your own API server.
 
 + Redis Database
 + Mongodb Database
-+ DigitalOcean Droplet or some other S3 Bucket
++ DigitalOcean Space or some other S3 Bucket
 + Domain with a valid A record
 + A Linux (recommended Ubuntu) Server with Node.JS installed
 
@@ -81,10 +81,21 @@ To generate the Config file, run `node main.js` once, and the program should not
         "clamdTimeout": null,
         "clamdHealthCheckInterval": null
     },
+    "EmailInterface": "sendmail",
+    "SMTPSettings":{
+        "Server": "",
+        "Port": 465,
+        "Secure": true,
+        "NoTLS": false,
+        "Username": "",
+        "Password": "",
+        "OverrideDomain": ""
+    },
     "GameServerTokens": [],
     "AllowAnyGameServer": false,
     "RequireTokenToDownloadBuilds": false,
-    "UnityVersion": "2023.1.10f1"
+    "GameEngine": "Unity",
+    "GameEngineVersion": "2023.2.20f1"
 }
 ```
 

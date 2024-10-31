@@ -1,8 +1,4 @@
----
-sidebar_position: 2
----
-
-# Email Setup
+# Sendmail Setup
 
 This is heavily based on [this guide by Pritthish Nath](https://pritthish-nath.medium.com/configuring-spf-dkim-and-dmarc-with-sendmail-on-ubuntu-18-04-41edfd24fdd2) with some slight adjustments. This guide assumes that you use [DigitalOcean](https://www.digitalocean.com/) as your provider; however, as long as you know how to set up a PTR on your IP and set your hostnames, you'll be fine.
 

@@ -4,7 +4,7 @@ Welcome to the Changelogs! Use the Directory on the left-hand side to select a r
 
 ## Latest Releases
 
-### [Hypernex.API](./Hypernex.API/141.md)
+### [Hypernex.API](./Hypernex.API/142.md)
 
 ### [Hypernex.CCK](./Hypernex.CCK/144.md)
 
