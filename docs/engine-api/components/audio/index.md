@@ -31,4 +31,4 @@ SetVolume | `void` | `float` | Sets the volume property of an AudioSource
 GetPosition | `float` | `none` | Gets the position property of an AudioSource
 SetPosition | `void` | `float` | Sets the position property of an AudioSource
 GetLength | `float` | `none` | Gets the length property of an AudioSource's clip
-LoadFromCobalt | `void` | [CobaltDownload](./../../cobaltdownload/index.md), `function()` | Loads data from a [CobaltDownload](./../../cobaltdownload/index.md) to an AudioSource
+LoadFromStream | `void` | [StreamDownload](./../../streamdownload/index.md), `function()` | Loads data from a [StreamDownload](./../../streamdownload/index.md) to an AudioSource

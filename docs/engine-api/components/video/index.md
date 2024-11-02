@@ -30,4 +30,4 @@ SetVolume | `void` | `float` | Sets the volume property of a VideoPlayer
 GetPosition | `float` | `none` | Gets the position property of a VideoPlayer
 SetPosition | `void` | `float` | Sets the position property of a VideoPlayer
 GetLength | `float` | `none` | Gets the length property of a VideoPlayer
-LoadFromCobalt | `void` | [CobaltDownload](./../../cobaltdownload/index.md)  | Loads data from a [CobaltDownload](./../../cobaltdownload/index.md) to a VideoPlayer
+LoadFromStream | `void` | [StreamDownload](./../../streamdownload/index.md)  | Loads data from a [StreamDownload](./../../streamdownload/index.md) to a VideoPlayer
