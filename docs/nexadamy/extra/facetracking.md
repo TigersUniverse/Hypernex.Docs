@@ -56,6 +56,14 @@ This means that the module you wish to use has not been converted to use our for
 </p>
 </details>
 
+<details><summary>Pico 4 Pro/Enterprise</summary>
+<p>
+
++ [VRCFTPicoModule](https://github.com/Slime-Senpai/VRCFTPicoModule) - Adds support for the Pico Connect / Pico Business Streamer Face and Eye Tracking
+
+</p>
+</details>
+
 <details><summary>HP Reverb G2 Omnicept Edition</summary>
 <p>
 
