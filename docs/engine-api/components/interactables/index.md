@@ -5,7 +5,7 @@ Provides tools for interacting with any object that can sync or is interactable.
 To get an Interactable from an item, use the [GetComponent](./../../item/getcomponent.md) method.
 
 ```js
-let interactableComponent = item.GetComponent("Interactable")
+let interactableComponent = item.GetComponent("Interactables")
 ```
 
 You can then use the `interactableComponent` property to access the Interactables class.
