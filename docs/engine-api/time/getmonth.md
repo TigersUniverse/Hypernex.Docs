@@ -6,10 +6,10 @@ The following example prints the current month in a year.
 
 **JavaScript**
 ```js
-print("The current month is " + new Date().GetMonth())
+print("The current month is " + new Time().GetMonth())
 ```
 
 **Lua**
 ```lua
-print("The current month is "..tostring(Date().GetMonth()))
+print("The current month is "..tostring(Time().GetMonth()))
 ```

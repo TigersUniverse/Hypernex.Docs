@@ -6,10 +6,10 @@ The following example prints the current milliseconds in a second.
 
 **JavaScript**
 ```js
-print("The current millisecond is " + new Date().GetMilliseconds())
+print("The current millisecond is " + new Time().GetMilliseconds())
 ```
 
 **Lua**
 ```lua
-print("The current millisecond is "..tostring(Date().GetMilliseconds()))
+print("The current millisecond is "..tostring(Time().GetMilliseconds()))
 ```

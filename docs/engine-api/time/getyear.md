@@ -6,10 +6,10 @@ The following example prints the current year.
 
 **JavaScript**
 ```js
-print("The current year is " + new Date().GetYear())
+print("The current year is " + new Time().GetYear())
 ```
 
 **Lua**
 ```lua
-print("The current year is "..tostring(Date().GetYear()))
+print("The current year is "..tostring(Time().GetYear()))
 ```

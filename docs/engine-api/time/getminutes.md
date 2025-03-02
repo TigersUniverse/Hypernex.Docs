@@ -6,10 +6,10 @@ The following example prints the current minutes in an hour.
 
 **JavaScript**
 ```js
-print("The current minute is " + new Date().GetMinutes())
+print("The current minute is " + new Time().GetMinutes())
 ```
 
 **Lua**
 ```lua
-print("The current minute is "..tostring(Date().GetMinutes()))
+print("The current minute is "..tostring(Time().GetMinutes()))
 ```

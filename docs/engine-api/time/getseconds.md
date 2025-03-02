@@ -6,10 +6,10 @@ The following example prints the current second in a minute
 
 **JavaScript**
 ```js
-print("It is second " + new Date().GetSeconds())
+print("It is second " + new Time().GetSeconds())
 ```
 
 **Lua**
 ```lua
-print("It is second "..tostring(Date().GetSeconds()))
+print("It is second "..tostring(Time().GetSeconds()))
 ```
