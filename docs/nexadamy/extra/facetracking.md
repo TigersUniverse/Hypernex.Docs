@@ -46,6 +46,15 @@ This means that the module you wish to use has not been converted to use our for
 </p>
 </details>
 
+<details><summary>Vive Focus Vision/Vive Focus 3/Vive XR Elite</summary>
+<p>
+
++ [ViveStreamingFaceTrackingModule](https://github.com/TigersUniverse/ViveStreamingFaceTrackingModule) - Adds support for the Vive Streaming app
++ [SRanipalTrackingModule](https://github.com/TigersUniverse/SRanipalTrackingModule) - Also works with these HMDs
+
+</p>
+</details>
+
 <details><summary>Meta Quest Pro</summary>
 <p>
 
