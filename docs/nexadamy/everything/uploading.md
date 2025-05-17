@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Uploading
@@ -18,7 +18,9 @@ Congrats! You're already done. You don't have to select anything!
 
 ### Avatar
 
-![avatar content builder](./img/avatar-content-builder.png)
+Select Content Window | Select Avatar Window 
+---|---
+![select window](./img/select-content-builder.png) | ![avatar content builder](./img/avatar-content-builder.png)
 
 In the list of avatars, select your Avatar's GameObject name.
 
@@ -34,11 +36,11 @@ On the next screen, you will be asked to fill in the following information.
 
 **Tags** - Any searchable tags for the avatar
 
-**Image** - The thumbnail for the asset
+**Thumbnail** - The thumbnail for the asset
 
-**Icons (Worlds Only)** - Any extra icons for the world
+**World Pictures (Worlds Only)** - Any extra icons for the world
 
-**Existing Icons (Worlds Only)** - Already existing extra icons for the world
+**Server Scripts (Worlds Only)** - Any scripts that will run on the server-side.
 
 ## Selecting a Build Target
 
@@ -48,8 +50,8 @@ While Android is currently paused for the Unity client, it is still good practic
 
 :::
 
-Simply click the `Switch to Standalone` for PC builds or `Switch to Android` for mobile builds.
+Simply drop down the `Build Platform` and select `Mobile`. After doing this, your solution should refresh to target Android.
 
 ## Building
 
-Click the `Build (asset type)` and off you go! Grab some popcorn, because it may take some time for your asset to build, especially if it's your first time!
+Click the `Build` button and off you go! Grab some popcorn, because it may take some time for your asset to build, especially if it's your first time!

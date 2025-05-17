@@ -80,28 +80,28 @@ Clients can deny assets from loading with the Component Security. You should pra
 
 You can read more about scripting [here](../../engine-api/).
 
-### Show All Parameters
+### Root Menu
 
-The Show All Parameters option simply allows all parameters on all Custom Animators to be shown in the UI.
+The [AvatarMenu](./menu) which correlates to how users will interact with your Avatar Parameters in game.
 
-### Visible Parameters
+### Avatar Parameters
 
-The Visible Parameters list allows creators to define which parameters are shown in the UI.
+The [AvatarParameters](./parameters) which list all parameters used in your Custom Animators.
 
 <details><summary>Other Avatar-Related Components</summary>
 <p>
 
+<span className="semi-bigger-text">LocalScript</span><br />
+
+The LocalScript allows you to attach a script to be executed locally at runtime.
+
 <span className="semi-bigger-text">FaceTrackingDescriptor</span><br />
 
 The FaceTrackingDescriptor component enables Facial Tracking on your avatar based on blendshapes that match VRCFaceTracking shapes.
-
-<span className="semi-bigger-text">MaterialDescriptor</span><br />
-
-The MaterialDescriptor will automatically switch materials on MeshRenderers depending on the Build Target of the game.
 
 </p>
 </details>
 
 ## Finishing Up
 
-Once you have correctly set all of your Avatar properties, you can move on to [uploading the asset](./uploading)!
+Once you have correctly set all of your Avatar properties, you can move on to [uploading the asset](./../uploading)!

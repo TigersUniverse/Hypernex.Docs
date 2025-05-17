@@ -42,10 +42,6 @@ A base for everything content creations. This can include:
 
 This module is mostly for developers to use in their projects to either incorporate Hypernex or modify Hypernex.
 
-## CCK.ScriptEditor
-
-The script editor for everything Hypernex. It is very bare bones, running in only a browser.
-
 ## CCK.Unity/Editor
 
 Everything for Hypernex relating to the Unity client. Manages Unity setup, building, and much more.
@@ -56,4 +52,4 @@ All three of these modules work together to bring an exemplary experience to all
 
 <span className="bigger-text">Ready to get started?</span>
 
-### [Download the latest CCK for Unity](https://github.com/TigersUniverse/Hypernex.CCK/releases/latest/download/Hypernex.CCK.unitypackage)
+### [Get the latest CCK for Unity](https://openupm.com/packages/dev.hypernex.cck.unity.editor/)

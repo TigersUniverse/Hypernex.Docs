@@ -175,6 +175,16 @@ Any sort of User Interface that may or may not be interactive.
 + `RectMask2D`
 + `CanvasScaler`
 + `GraphicRaycaster`
++ `HorizontalLayoutGroup`
++ `VerticalLayoutGroup`
++ `GridLayoutGroup`
++ `ScrollRect`
++ `Scrollbar`
++ `Selectable`
++ `Outline`
++ `PositionAsUV1`
++ `Shadow`
++ `Mask`
 + `TMP_Text`
 + `TMP_Dropdown`
 + `TMP_InputField`
