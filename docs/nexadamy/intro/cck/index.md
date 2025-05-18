@@ -52,4 +52,4 @@ All three of these modules work together to bring an exemplary experience to all
 
 <span className="bigger-text">Ready to get started?</span>
 
-### [Get the latest CCK for Unity](https://openupm.com/packages/dev.hypernex.cck.unity.editor/)
+### [Install the latest CCK for Unity](./installingcck.md)
