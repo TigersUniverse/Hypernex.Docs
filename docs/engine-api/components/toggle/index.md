@@ -1,11 +1,5 @@
 # Toggle
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Toggle class is a component which interacts with Unity Toggles on UI and 3D.
 
 :::caution
@@ -32,3 +26,9 @@ RegisterValueChanged | `void` | `function(bool)` | Registers an event for when t
 RemoveAllValuesChanged | `void` | `none` | Removes all events for when the toggle value is changed
 GetColorBlock | [ColorBlock](./../../colorblock/index.md)? | `none` | Gets the ColorBlock for the element
 SetColorBlock | `void` | [ColorBlock](./../../colorblock/index.md) | Sets the ColorBlock for the element
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component

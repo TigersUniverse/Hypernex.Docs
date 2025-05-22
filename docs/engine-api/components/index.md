@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Components
 
 Here is a directory of all components which can be accessed by scripting.
@@ -12,13 +16,24 @@ Don't see your component here? That either means one of two things:
 
 :::
 
+:::info
+
++ All components are only available in a Local environment
+
+:::
+
++ [Animation](./animation/index.md)
++ [Animator](./animator/index.md)
 + [Audio](./audio/index.md)
 + [Button](./button/index.md)
 + [Dropdown](./dropdown/index.md)
 + [Graphic](./graphic/index.md)
 + [Interactables](./interactables/index.md)
 + [Light](./light/index.md)
++ [NavAgent](./navagent/index.md)
++ [NavSurface](./navsurface/index.md)
 + [PhysicsBody](./physicsbody/index.md)
++ [Renderer](./renderer/index.md)
 + [Scrollbar](./scrollbar/index.md)
 + [Slider](./slider/index.md)
 + [Text](./text/index.md)

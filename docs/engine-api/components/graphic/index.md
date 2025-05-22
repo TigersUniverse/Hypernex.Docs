@@ -1,11 +1,5 @@
 # Graphic
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Graphic class is a component which interacts with Unity Images on UI.
 
 :::caution
@@ -26,4 +20,12 @@ You can then use the `graphicComponent` property to access the Graphic class.
 
 Method Name | Return Type | Parameters | Description
 --- | --- | --- | ---
-SetImageFromAsset | `void` | `string` | Sets the image asset from the World's Resources
+SetImageFromAsset | `void` | `string` | Sets the image's texture from the World's Resources
+SetImageFromTexture | `void` | [Texture](./../../texture/index.md) | Sets the image from a Texture object
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component
+RawEnabled | `bool` | Checks the active state of the RawImage component

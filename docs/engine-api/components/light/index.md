@@ -1,11 +1,5 @@
 # Light
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Light class is a component which interacts with Unity Lights.
 
 To get a Light component from an item, use the [GetComponent](./../../item/getcomponent.md) method.

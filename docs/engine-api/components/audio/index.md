@@ -13,7 +13,7 @@ You can then use the `audioComponent` property to access the Audio class.
 ## Methods
 
 Method Name | Return Type | Parameters | Description
---- | --- | --- | ---
+--- | --- | --- | ----
 IsPlaying | `bool` | `none` | Returns true if the attached AudioSource is playing
 IsMuted | `bool` | `none` | Returns true if the attached AudioSource is muted
 IsLooping | `bool` | `none` | Returns true if the attached AudioSource is looping
@@ -32,3 +32,9 @@ GetPosition | `float` | `none` | Gets the position property of an AudioSource
 SetPosition | `void` | `float` | Sets the position property of an AudioSource
 GetLength | `float` | `none` | Gets the length property of an AudioSource's clip
 LoadFromStream | `void` | [StreamDownload](./../../streamdownload/index.md), `function()` | Loads data from a [StreamDownload](./../../streamdownload/index.md) to an AudioSource
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component
