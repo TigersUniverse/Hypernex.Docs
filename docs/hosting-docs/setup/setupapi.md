@@ -35,6 +35,7 @@ To generate the Config file, run `node main.js` once, and the program should not
 ```json
 {
     "BaseURL": "http://localhost/",
+    "CDNURLs": ["http://localhost:3333/"],
     "DatabaseInfo": {
         "DatabaseNumber": 0,
         "Host": "",
