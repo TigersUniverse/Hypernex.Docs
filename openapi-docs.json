@@ -135,46 +135,6 @@
                 }
             }
         },
-        "/authForBuilds":{
-            "get":{
-                "summary": "authForBuilds",
-                "description": "Gets whether or not a Login is required to download builds",
-                "responses": {
-                    "200": {
-                        "description": "A successful request",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "success": {
-                                            "description": "Was the operation a success",
-                                            "type": "boolean"
-                                        },
-                                        "message": {
-                                            "description": "The message returned by the server",
-                                            "type": "string"
-                                        },
-                                        "result": {
-                                            "description": "The result of the server response",
-                                            "type": "object",
-                                            "properties": {
-                                                "authForBuilds": {
-                                                    "description": "Whether or not a Login is required to download builds",
-                                                    "type": "boolean"
-                                                }
-                                            },
-                                            "required": ["authForBuilds"]
-                                        }
-                                    },
-                                    "required": ["success", "message"]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
         "/gameEngine":{
             "get":{
                 "summary": "gameEngine",
@@ -209,6 +169,163 @@
                                                 }
                                             },
                                             "required": ["GameEngine", "GameEngineVersion"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/getCDNs":{
+            "get":{
+                "summary": "getCDNs",
+                "description": "Gets all available CDNs",
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "Server": {
+                                                    "description": "The domain for the CDN Server",
+                                                    "type": "string"
+                                                },
+                                                "Latitude": {
+                                                    "description": "Latitude coordinate for the CDN Server",
+                                                    "type": "integer"
+                                                },
+                                                "Longitude": {
+                                                    "description": "Longitude coordinate for the CDN Server",
+                                                    "type": "integer"
+                                                }
+                                            },
+                                            "required": ["GameEngine", "GameEngineVersion"]
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/checkGameServer/{gameServerId}":{
+            "get":{
+                "summary": "checkGameServer/:gameServerId",
+                "description": "Checks if a GameServer is connected",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gameServerId",
+                        "description": "The Id of the GameServer",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "valid": {
+                                                    "description": "If the GameServer is connected and validated",
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/checkGameServer/{gameServerId}/{gameServerToken}":{
+            "get":{
+                "summary": "checkGameServer/:gameServerId/:gameServerToken",
+                "description": "Checks if a GameServer is connected and the provided Token matches and is valid",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "gameServerId",
+                        "description": "The Id of the GameServer",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    },
+                    {
+                        "in": "path",
+                        "name": "gameServerToken",
+                        "description": "The corresponding Token of the GameServer",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object",
+                                            "properties": {
+                                                "valid": {
+                                                    "description": "If the GameServer is connected and validated",
+                                                    "type": "boolean"
+                                                }
+                                            }
                                         }
                                     },
                                     "required": ["success", "message"]
@@ -1656,12 +1773,12 @@
                 }
             }
         },
-        "/upload": {
+        "/update/avatar": {
             "post": {
-                "summary": "upload",
-                "description": "Uploads an allowed file to the server",
+                "summary": "update/avatar",
+                "description": "Updates the file associated with an avatar by its id",
                 "requestBody": {
-                    "description": "Information required to upload a file",
+                    "description": "Information required to update an avatar by its id",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1675,9 +1792,12 @@
                                         "description": "The token's content",
                                         "type": "string"
                                     },
-                                    "file": {"description": "The file being uploaded (from a form)"},
-                                    "avatarMeta": {
-                                        "description": "The avatarMeta if the upload is an avatar",
+                                    "fileid": {
+                                        "description": "The File Id corresponding to the Avatar",
+                                        "type": "string"
+                                    },
+                                    "avatarmeta": {
+                                        "description": "The AvatarMeta for the Avatar",
                                         "type": "object",
                                         "properties": {
                                             "Publicity": {
@@ -1709,51 +1829,9 @@
                                                 "type": "string"
                                             }
                                         }
-                                    },
-                                    "worldMeta": {
-                                        "description": "The worldMeta if the upload is a world",
-                                        "type": "object",
-                                        "properties": {
-                                            "Publicity": {
-                                                "description": "The publicity of an world represented as an integer from 0-1",
-                                                "type": "integer"
-                                            },
-                                            "Name": {
-                                                "description": "The name of the world",
-                                                "type": "string"
-                                            },
-                                            "Description": {
-                                                "description": "The world's description",
-                                                "type": "string"
-                                            },
-                                            "Tags": {
-                                                "description": "The world's tags",
-                                                "type": "array"
-                                            },
-                                            "ThumbnailURL": {
-                                                "description": "The Thumbnail URL for a world",
-                                                "type": "string"
-                                            },
-                                            "IconURLs": {
-                                                "description": "An array of Image URLs as icons for a world",
-                                                "type": "array"
-                                            },
-                                            "ServerScripts": {
-                                                "description": "An array of Script URLs as ServerScripts for a world",
-                                                "type": "array"
-                                            },
-                                            "BuildPlatform": {
-                                                "description": "The BuildPlatform for the file being uploaded along with the worldMeta",
-                                                "type": "integer"
-                                            },
-                                            "Id": {
-                                                "description": "The Id of an existing world being overwritten or added to",
-                                                "type": "string"
-                                            }
-                                        }
                                     }
                                 },
-                                "required": ["userid", "tokenContent", "file"]
+                                "required": ["userid", "tokenContent", "fileid", "avatarmeta"]
                             }
                         }
                     }
@@ -1787,12 +1865,12 @@
                 }
             }
         },
-        "/uploadPart": {
+        "/update/world": {
             "post": {
-                "summary": "uploadPart",
-                "description": "Uploads part of an allowed file to the server",
+                "summary": "update/world",
+                "description": "Updates the file associated with a world by its id",
                 "requestBody": {
-                    "description": "Information required to upload part of a file",
+                    "description": "Information required to update a world by its id",
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1806,59 +1884,12 @@
                                         "description": "The token's content",
                                         "type": "string"
                                     },
-                                    "file": {"description": "The file being uploaded (from a form)"},
-                                    "originalFileName": {
-                                        "description": "The original file's name",
+                                    "fileid": {
+                                        "description": "The File Id corresponding to the World",
                                         "type": "string"
                                     },
-                                    "chunkNumber": {
-                                        "description": "The current chunk of a part to upload",
-                                        "type": "integer"
-                                    },
-                                    "amountOfChunks": {
-                                        "description": "The total amount of chunks as calculated by the client",
-                                        "type": "integer"
-                                    },
-                                    "chunkId": {
-                                        "description": "The assigned upload part id given after the first chunk is uploaded",
-                                        "type": "string"
-                                    },
-                                    "avatarMeta": {
-                                        "description": "The avatarMeta if the upload is an avatar",
-                                        "type": "object",
-                                        "properties": {
-                                            "Publicity": {
-                                                "description": "The publicity of an avatar represented as an integer from 0-1",
-                                                "type": "integer"
-                                            },
-                                            "Name": {
-                                                "description": "The name of the avatar",
-                                                "type": "string"
-                                            },
-                                            "Description": {
-                                                "description": "The avatar's description",
-                                                "type": "string"
-                                            },
-                                            "Tags": {
-                                                "description": "The avatar's tags",
-                                                "type": "array"
-                                            },
-                                            "ImageURL": {
-                                                "description": "The Image URL for an avatar",
-                                                "type": "string"
-                                            },
-                                            "BuildPlatform": {
-                                                "description": "The BuildPlatform for the file being uploaded along with the avatarMeta",
-                                                "type": "integer"
-                                            },
-                                            "Id": {
-                                                "description": "The Id of an existing avatar being overwritten or added to",
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "worldMeta": {
-                                        "description": "The worldMeta if the upload is a world",
+                                    "worldmeta": {
+                                        "description": "The WorldMeta for a World",
                                         "type": "object",
                                         "properties": {
                                             "Publicity": {
@@ -1900,7 +1931,7 @@
                                         }
                                     }
                                 },
-                                "required": ["userid", "tokenContent", "file", "chunkNumber", "amountOfChunks"]
+                                "required": ["userid", "tokenContent", "fileid", "worldmeta"]
                             }
                         }
                     }
@@ -1923,17 +1954,7 @@
                                         },
                                         "result": {
                                             "description": "The result of the server response",
-                                            "type": "object",
-                                            "properties": {
-                                                "chunkNumber": {
-                                                    "description": "The next chunk number as calculated by the server",
-                                                    "type": "integer"
-                                                },
-                                                "chunkId": {
-                                                    "description": "The assigned chunkId",
-                                                    "type": "string"
-                                                }
-                                            }
+                                            "type": "object"
                                         }
                                     },
                                     "required": ["success", "message"]
@@ -3575,6 +3596,68 @@
                 "responses": {
                     "200": {
                         "description": "A successful request"
+                    }
+                }
+            }
+        },
+        "/discourse": {
+            "post": {
+                "summary": "discourse",
+                "description": "Verifies Discourse Connect tokens and signs you in to Discourse",
+                "requestBody": {
+                    "description": "Information required for Discourse Connect",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "userid": {
+                                        "description": "The UserId",
+                                        "type": "string"
+                                    },
+                                    "tokenContent": {
+                                        "description": "The token's content",
+                                        "type": "string"
+                                    },
+                                    "payload": {
+                                        "description": "The payload from the Discourse server",
+                                        "type": "string"
+                                    },
+                                    "sig": {
+                                        "description": "The signature for the payload",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": ["userid", "tokenContent", "payload", "sig"]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "A successful request",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties":{
+                                        "success": {
+                                            "description": "Was the operation a success",
+                                            "type": "boolean"
+                                        },
+                                        "message": {
+                                            "description": "The message returned by the server",
+                                            "type": "string"
+                                        },
+                                        "result": {
+                                            "description": "The result of the server response",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "required": ["success", "message"]
+                                }
+                            }
+                        }
                     }
                 }
             }
