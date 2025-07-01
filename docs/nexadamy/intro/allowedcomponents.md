@@ -126,19 +126,6 @@ MagicaCloth is **NOT** supported! You **must** have [MagicaCloth2](https://asset
 + `MagicaSphereCollider`
 + `MagicaWindZone`
 
-**DynamicBone Components**
-
-:::note
-
-DynamicBone is a paid assembly. Your build of Hypernex.Unity may not have this.
-
-:::
-
-+ `DynamicBone`
-+ `DynamicBoneCollider`
-+ `DynamicBonePlaneCollider`
-+ `DynamicBoneColliderBase`
-
 **AkBoneDynamics Components**
 
 + `AkBoneDynamics`
