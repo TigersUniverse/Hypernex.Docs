@@ -26,3 +26,9 @@ ResetCenterOfMass | `void` | `none` | Resets the RigidBody's center of mass
 GetWorldCenterOfMass | [float3](./../../float3/index.md) | `none` | Gets the RigidBody's world center of mass
 GetCenterOfMass | [float3](./../../float3/index.md) | `none` | Gets the RigidBody's center of mass
 SetCenterOfMass | `void` | [float3](./../../float3/index.md) | Sets the RigidBody's center of mass
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component

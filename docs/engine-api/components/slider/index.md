@@ -1,11 +1,5 @@
 # Slider
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Slider class is a component which interacts with Unity Sliders on UI.
 
 :::caution
@@ -35,3 +29,9 @@ GetMaximum | `float` | `none` | Gets the current maximum value for the slider
 SetRange | `void` | `float`, `float` | Sets the minimum and then maximum range for the slider
 GetColorBlock | [ColorBlock](./../../colorblock/index.md)? | `none` | Gets the ColorBlock for the element
 SetColorBlock | `void` | [ColorBlock](./../../colorblock/index.md) | Sets the ColorBlock for the element
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component

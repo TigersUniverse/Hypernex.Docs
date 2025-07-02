@@ -1,11 +1,5 @@
 # Dropdown
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Dropdown class is a component which interacts with Unity Dropdowns on UI and 3D.
 
 :::caution
@@ -32,3 +26,9 @@ RegisterValueChanged | `void` | `function(int)` | Registers an event for when th
 RemoveAllValuesChanged | `void` | `none` | Removes all events for when the selected index is changed
 GetColorBlock | [ColorBlock](./../../colorblock/index.md)? | `none` | Gets the ColorBlock for the element
 SetColorBlock | `void` | [ColorBlock](./../../colorblock/index.md) | Sets the ColorBlock for the element
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+Enabled | `bool` | Checks the active state of the component

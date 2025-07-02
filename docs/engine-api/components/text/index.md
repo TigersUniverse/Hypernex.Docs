@@ -1,11 +1,5 @@
 # Text
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The Text class is a component which interacts with Unity Text on UI and 3D.
 
 :::caution
@@ -33,4 +27,5 @@ SetText | `void` | `string` | Sets the current text
 
 Property Name | Type | Description
 --- | --- | ---
+Enabled | `bool` | Checks the active state of the component
 RichText | `bool` | Whether or not the Text component can use [RichText](https://docs.unity3d.com/Packages/com.unity.ugui@3.0/manual/StyledText.html)

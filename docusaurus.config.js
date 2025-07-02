@@ -68,7 +68,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/hypernex-social-card.png',
+      image: 'img/hypernex-social-card.jpg',
       navbar: {
         title: 'Hypernex',
         logo: {
@@ -122,12 +122,20 @@ const config = {
             title: 'Community',
             items: [
               {
+                label: "Forum",
+                href: 'https://forum.hypernex.dev'
+              },
+              {
                 label: 'Discord',
                 href: 'https://hypernex.dev/discord',
               },
               {
                 label: "X",
                 href: 'https://x.com/HypernexGame'
+              },
+              {
+                label: "Bluesky",
+                href: 'https://bsky.app/profile/hypernex.dev'
               }
             ],
           },

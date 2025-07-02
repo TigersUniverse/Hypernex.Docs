@@ -7,7 +7,7 @@ sidebar_position: 0
 <details><summary>Like Videos?</summary>
 <p>
 
-<iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://player.vimeo.com/video/995631072?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Hypernex Tutorials: Creating a World"></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/1092646595?h=f1b0e7768d" width="100%" style={{"aspect-ratio": "16 / 9"}} frameborder="0" allowfullscreen frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"></iframe>
 
 Here's a video tutorial on setting up a world in Hypernex
 
@@ -18,15 +18,15 @@ Here's a video tutorial on setting up a world in Hypernex
 
 When starting, create a new GameObject in the scene you have the world in. After creating that GameObject, go ahead and add a `World` component to it.
 
+:::tip
+
+You can also create a World object by opening the Content Builder Window and selecting `Create a World Object!`.
+
+:::
+
 ![world component](./img/world-component.png)
 
 The World component describes all the information about the world and the current scene.
-
-:::tip
-
-Most of the configurable information in the World component is also scriptable.
-
-:::
 
 ## Configuring the World Component
 
@@ -52,26 +52,14 @@ Below are the explanations to all of the properties in the World component.
 
 **Spawn Points** - A list of GameObjects that are used as spawn locations
 
-**Local Scripts** - A list of Local Scripts to execute on the client
-
-:::tip
-
-Local Scripts can also be attached to GameObjects with the `LocalScript` component.
-
-:::
-
-**Server Scripts** - A list of scripts that will be executed on the server
-
-:::note
-
-ServerScripts are different than LocalScripts and they have different forwarded Spaces. [See the docs for more information](/docs/engine-api/)
-
-:::
-
-**Local Script Assets** - A list of Unity Objects than can be accessed by LocalScripts
+**Script Assets** - A list of Unity Objects than can be accessed by LocalScripts
 
 <details><summary>Other World-Related Components</summary>
 <p>
+
+<span className="semi-bigger-text">LocalScript</span><br />
+
+The LocalScript allows you to attach a script to be executed locally at runtime.
 
 <span className="semi-bigger-text">RespawnableDescriptor</span><br />
 
@@ -95,13 +83,9 @@ There is a VideoPlayer prefab available [here](https://github.com/TigersUniverse
 
 The VideoPlayerDescriptor defines properties for IVideoPlayers to work off of.
 
-<span className="semi-bigger-text">MaterialDescriptor</span><br />
-
-The MaterialDescriptor will automatically switch materials on MeshRenderers depending on the Build Target of the game.
-
 </p>
 </details>
 
 ## Finishing Up
 
-Once you have completed your World component, you should be able to see it appear in your CCK Builder window. From here you can continue to [upload the world](./uploading.md).
+Once you have completed your World component, you should be able to see it appear in your CCK Builder window. From here you can continue to [upload the world](./../uploading).

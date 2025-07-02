@@ -7,7 +7,7 @@ sidebar_position: 1
 <details><summary>Like Videos?</summary>
 <p>
 
-<iframe width="100%" style={{"aspect-ratio": "16 / 9"}} src="https://player.vimeo.com/video/995585478?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" title="Hypernex Tutorials: Setting Up the CCK"></iframe>
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/1092646089?h=5873440a8b" width="100%" style={{"aspect-ratio": "16 / 9"}} frameborder="0" allowfullscreen frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"></iframe>
 
 Here's a video tutorial on setting up the Hypernex.Unity CCK in a project
 
@@ -42,10 +42,6 @@ A base for everything content creations. This can include:
 
 This module is mostly for developers to use in their projects to either incorporate Hypernex or modify Hypernex.
 
-## CCK.ScriptEditor
-
-The script editor for everything Hypernex. It is very bare bones, running in only a browser.
-
 ## CCK.Unity/Editor
 
 Everything for Hypernex relating to the Unity client. Manages Unity setup, building, and much more.
@@ -56,4 +52,4 @@ All three of these modules work together to bring an exemplary experience to all
 
 <span className="bigger-text">Ready to get started?</span>
 
-### [Download the latest CCK for Unity](https://github.com/TigersUniverse/Hypernex.CCK/releases/latest/download/Hypernex.CCK.unitypackage)
+### [Install the latest CCK for Unity](./installingcck.md)

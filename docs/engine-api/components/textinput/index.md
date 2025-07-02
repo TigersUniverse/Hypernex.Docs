@@ -1,11 +1,5 @@
 # TextInput
 
-:::info
-
-+ This class is only available in a Local environment
-
-:::
-
 The TextInput class is a component which interacts with Unity TextFields on UI.
 
 :::caution
@@ -40,5 +34,6 @@ SetColorBlock | `void` | [ColorBlock](./../../colorblock/index.md) | Sets the Co
 
 Property Name | Type | Description
 --- | --- | ---
+Enabled | `bool` | Checks the active state of the component
 RichText | `bool` | Whether or not the TextInput component can use [RichText](https://docs.unity3d.com/Packages/com.unity.ugui@3.0/manual/StyledText.html)
 PlaceholderRichText | `bool` | Whether or not the TextInput's placeholder can use [RichText](https://docs.unity3d.com/Packages/com.unity.ugui@3.0/manual/StyledText.html)

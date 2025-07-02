@@ -31,3 +31,11 @@ IsNetworkSyncOwned | `bool` | `none` | Returns true if the NetworkSync attached 
 IsNetworkSyncOwnedLocally | `bool` | `none` | Returns true if the NetworkSync attached to an Item is owned by the LocalPlayer
 GetNetworkSyncOwner | `string` | `none` | Returns the UserId of whoever currently owns the NetworkSync, or an Empty string if no one owns it
 IsGrabbedLocally | `bool` | `none` | Returns true if the Grabbable attached to an Item is being Grabbed by the LocalPlayer
+
+## Properties
+
+Property Name | Type | Description
+--- | --- | ---
+SyncEnabled | `bool` | Checks the active state of the NetworkSync component
+RespawnEnabled | `bool` | Checks the active state of the Respawnable component
+GrabEnabled | `bool` | Checks the active state of the Grabbable component
