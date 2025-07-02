@@ -6,7 +6,7 @@ Welcome to the Changelogs! Use the Directory on the left-hand side to select a r
 
 ### [Hypernex.API](./Hypernex.API/150.md)
 
-### [Hypernex.CCK](./Hypernex.CCK/203.md)
+### [Hypernex.CCK](./Hypernex.CCK/206.md)
 
 ### [Hypernex.Networking](./Hypernex.Networking/125.md)
 
