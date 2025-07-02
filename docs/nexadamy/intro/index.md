@@ -6,7 +6,7 @@ sidebar_position: 1
 
 The intro section contains everything you need to get started with creating content in Hypernex!
 
-## [CCK](./cck)
+## [CCK](./cck/index.md)
 
 The CCK contains all of the information on how to create content with our provided toolset.
 

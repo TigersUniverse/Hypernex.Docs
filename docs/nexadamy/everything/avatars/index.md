@@ -82,11 +82,11 @@ You can read more about scripting [here](../../engine-api/).
 
 ### Root Menu
 
-The [AvatarMenu](./menu) which correlates to how users will interact with your Avatar Parameters in game.
+The [AvatarMenu](./menu.md) which correlates to how users will interact with your Avatar Parameters in game.
 
 ### Avatar Parameters
 
-The [AvatarParameters](./parameters) which list all parameters used in your Custom Animators.
+The [AvatarParameters](./parameters.md) which list all parameters used in your Custom Animators.
 
 <details><summary>Other Avatar-Related Components</summary>
 <p>
@@ -104,4 +104,4 @@ The FaceTrackingDescriptor component enables Facial Tracking on your avatar base
 
 ## Finishing Up
 
-Once you have correctly set all of your Avatar properties, you can move on to [uploading the asset](./../uploading)!
+Once you have correctly set all of your Avatar properties, you can move on to [uploading the asset](./../uploading.md)!

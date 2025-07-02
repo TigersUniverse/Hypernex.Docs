@@ -88,4 +88,4 @@ The VideoPlayerDescriptor defines properties for IVideoPlayers to work off of.
 
 ## Finishing Up
 
-Once you have completed your World component, you should be able to see it appear in your CCK Builder window. From here you can continue to [upload the world](./../uploading).
+Once you have completed your World component, you should be able to see it appear in your CCK Builder window. From here you can continue to [upload the world](./../uploading.md).
