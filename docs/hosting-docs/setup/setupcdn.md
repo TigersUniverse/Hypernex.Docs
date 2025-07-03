@@ -123,16 +123,16 @@ cache-handler requires a storage module to be installed with it, otherwise it wi
 + [Redis](https://github.com/redis/rueidis) `github.com/darkweak/storages/redis/caddy`
 + [Simplefs](https://github.com/darkweak/simplefs) `github.com/darkweak/storages/simplefs/caddy`
 
-We recommend using `go-redis` and will be explaining how to use it, but you can select whatever the best storage is to run on your server. Keep in mind that whichever storage solution you pick, you will be responsible for setting up correctly and securely.
+We recommend using `simplefs` and will be explaining how to use it, but you can select whatever the best storage is to run on your server. Keep in mind that whichever storage solution you pick, you will be responsible for setting up correctly and securely.
 
 You can read more about storages [here](https://github.com/darkweak/storages/).
 
 :::
 
-For this tutorial, we will be building caddy with cache-handler and go-redis. Run the command below to start building caddy with the two modules.
+For this tutorial, we will be building caddy with cache-handler and simplefs. Run the command below to start building caddy with the two modules.
 
 ```bash
-xcaddy build --with github.com/caddyserver/cache-handler --with github.com/darkweak/storages/go-redis/caddy
+xcaddy build --with github.com/darkweak/souin/plugins/caddy --with github.com/darkweak/storages/simplefs/caddy
 ```
 
 And after a few minutes, we should see our caddy executable built at `./caddy`.
@@ -142,7 +142,12 @@ Now we need to create our configuration file. In the same directory as caddy, cr
 ```caddy
 {
   cache {
-    url 127.0.0.1:6379
+    simplefs {
+      configuration {
+          size 10000
+          path cache
+      }
+    }
   }
   regex {
     exclude /randomImage
@@ -152,7 +157,9 @@ Now we need to create our configuration file. In the same directory as caddy, cr
 }
 examplecdn.yoururl.com {
   cache
-  reverse_proxy :3333
+  reverse_proxy :3333 {
+      flush_interval -1
+  }
 }
 ```
 
@@ -169,14 +176,6 @@ Then you'll replace `examplecdn.yoururl.com` with the domain that will be intera
 The domain should be different from your API's domain. While you may be able to setup Caddy to reverse proxy requests to both your API and CDN on the same server, this configuration is not supported.
 
 :::
-
-<details><summary>If you're also using Redis as your Storage</summary>
-<p>
-
-Since we're using Redis, we'll need to setup a redis server locally. You can read a guide [here](https://redis.io/docs/latest/operate/oss_and_stack/install/archive/install-redis/) on how to install a Redis server locally.
-
-</p>
-</details>
 
 After you create your Caddyfile, you are now ready to start your Caddy server!
 
