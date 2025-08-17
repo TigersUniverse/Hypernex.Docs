@@ -1,5 +1,13 @@
 # Download
 
+:::info
+
++ This method is only available on **LocalScripts**
+
+:::
+
+Downloads media from a Server's [VideoRequest](./../videorequest/index.md).
+
 **Parameters**
 
 Parameter Name | Parameter Type | Parameter Description
@@ -12,34 +20,43 @@ The example below downloads media and sets a VideoPlayer to that media
 
 **JavaScript**
 ```js
-const url = "https://www.youtube.com/watch?v=ZdRontrcHRM"
+let Events = instance.GetHandler("Events")
+let VideoPlayer = item.GetComponent("Video")
 
-let World = instance.GetHandler("World")
-let videoPlayer = World.GetItemInRoot("VideoPlayer").GetComponent("Video")
-print("Downloading video at " + url)
-Streaming.Download(url, downloadResult => {
-    if(downloadResult === undefined){
-        print("Could not download! Is this a valid/supported URL?")
-        return
-    }
-    videoPlayer.LoadFromStream(downloadResult)
-    videoPlayer.Play()
+const url = "https://www.youtube.com/watch?v=hmQ9YrZ6Whc"
+
+Events.Subscribe(ScriptEvent.OnServerNetworkEvent, (eventName, eventArgs) => {
+    if(eventName !== "getVideo") return
+    let req = eventArgs[0]
+    print("Downloading video from " + req.GetDownloadUrl())
+    Streaming.Download(req, downloadResult => {
+        if(downloadResult === undefined || downloadResult === null){
+            print("Could not find a video for URL!")
+            return
+        }
+        VideoPlayer.LoadFromStream(downloadResult)
+    })
 })
 ```
 
 **Lua**
 ```lua
-local url = "https://www.youtube.com/watch?v=ZdRontrcHRM"
+local Events = instance.GetHandler("Events")
+local VideoPlayer = item.GetComponent("Video")
 
-local World = instance.GetHandler("World")
-local videoPlayer = World.GetItemInRoot("VideoPlayer").GetComponent("Video")
-print("Downloading video at "..url)
-Streaming.Download(url, function(downloadResult)
-    if downloadResult == nil then
-        print("Could not download! Is this a valid/supported URL?")
-    else
-        videoPlayer.LoadFromStream(downloadResult)
-        videoPlayer.Play()
+local url = "https://www.youtube.com/watch?v=hmQ9YrZ6Whc"
+
+Events.Subscribe(ScriptEvent.OnServerNetworkEvent, function(eventName, eventArgs)
+    if eventName == "getVideo" then
+        local req = eventArgs[1]
+        print("Downloading video from "..tostring(req.GetDownloadUrl()))
+        Streaming.Download(req, function(downloadResult)
+            if downloadResult == nil then
+                print("Could not find a video for URL!")
+            else
+                VideoPlayer.LoadFromStream(downloadResult)
+            end
+        end)
     end
 end)
 ```

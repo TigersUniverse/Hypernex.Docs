@@ -8,14 +8,15 @@ The general idea of Handlers is that they manage crucial functionality of the Hy
 
 Below is a list of handlers
 
-+ [Bindings](./bindings/index.md)
++ [Bindings](./bindings/index.md) (Client-Only)
 + [Events](./events/index.md)
-+ [NavMesh](./navmesh/index.md)
++ [NavMesh](./navmesh/index.md) (Client-Only)
 + [Network](./network/index.md)
-+ [Physics](./physics/index.md)
-+ [Players](./players/index.md)
-+ [Runtime](./runtime/index.md)
-+ [World](./world/index.md)
++ [Physics](./physics/index.md) (Client-Only)
++ [Players](./players/index.md) (Client-Only)
++ [Runtime](./runtime/index.md) (Client-Only)
++ [World](./world/index.md) (Client-Only)
++ [HTTP](./http/index.md) (Server-Only)
 
 ## Getting a Handler
 
