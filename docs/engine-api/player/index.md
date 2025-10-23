@@ -33,4 +33,5 @@ Avatar | [Avatar](./../avatar/index.md) | The Avatar associated with the Player
 [Pronouns](./pronouns.md) | [Pronouns](./../pronouns/index.md) | The Player's pronouns
 Username | `string` | The Player's username
 DisplayName | `string` | The Player's DisplayName, or Username if empty
+IsVR | `bool` | Whether or not the Player is currently in VR
 IsHost | `bool` | Returns `true` if the Player is the Host of the GameInstance
