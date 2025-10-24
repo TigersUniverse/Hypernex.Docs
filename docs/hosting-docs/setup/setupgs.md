@@ -60,3 +60,13 @@ Configure this as needed; config keys should be self explanatory.
 ### Running the GameServer
 
 If configured correctly, you can now launch the GameServer by running `./Hypernex.Networking.Server`. After running, you will know when the GameServer is ready when it outputs `Ready!` in green at the bottom.
+
+:::warning
+
+yt-dlp will download to `path/to/Hypernex.Networking.Server/ytdlp/yt-dlp`. After it downloads you MUST make it executable with the following command:
+
+`chmod +x ytdlp/yt-dlp`
+
+Not doing this will cause yt-dlp to fail to launch, meaning your clients will be unable to download media!
+
+:::
