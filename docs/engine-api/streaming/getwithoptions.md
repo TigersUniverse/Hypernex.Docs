@@ -36,7 +36,7 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, function(userid, eventName, eve
         Streaming.Get(eventArgs[1], function(videoRequest){
             // VideoRequests will return null/undefined if no media is found at the specified URL
             if (videoRequest === undefined || videoRequest === null) return
-            Network.SendToAllClients("loadVideo", {videoRequest})
+            Network.SendToAllClients("loadVideo", [videoRequest])
         }
     }
 })
