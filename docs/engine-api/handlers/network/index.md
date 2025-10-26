@@ -1,6 +1,6 @@
 # Network
 
-Network is used to send data from the Client to the Server.
+Network is used to send data from the Client to the Server and the Server to the Client.
 
 :::warning
 
@@ -20,4 +20,6 @@ You can then use the `Network` property to access the Network class.
 
 Method Name | Return Type | Parameters | Description
 --- | --- | --- | ---
-[SendToServer](./sendtoserver.md) | `void` | `string`, `object[]`, [MessageChannel](./../../messagechannel/index.md) | Sends data to the server
+[SendToServer](./sendtoserver.md) | `void` | `string`, `object`[], [MessageChannel](./../../messagechannel/index.md) | Sends data to the server (Client-only)
+[SendToClient](./sendtoclient.md) | `void` | `string`, `string`, `object`[], [MessageChannel](./../../messagechannel/index.md) | Sends an object data array to a client (Server-only)
+[SendToAllClients](./sendtoallclients.md) | `void` | `string`, `object`[], [MessageChannel](./../../messagechannel/index.md) | Sends an object data array to all clients (Server-only)

@@ -24,7 +24,7 @@ Parameter Name | Parameter Type | Parameter Description
 --- | --- | ---
 eventName | string | The name of the event to be identified
 data | object[] | An Array containing data to send.
-messageChannel | [MessageChannel](./../messagechannel/index.md) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
+messageChannel | [MessageChannel](./../../messagechannel/index.md) | The MessageChannel to send data over. Use this based on how often you send data between the server and the client.
 
 :::note
 
@@ -37,6 +37,9 @@ The following example relays data from `clientTeam` to the rest of the clients o
 
 **JavaScript**
 ```js
+let Events = instance.GetHandler("Events")
+let Network = instance.GetHandler("Network")
+
 Events.Subscribe(ScriptEvent.OnUserNetworkEvent, new SandboxFunc(engine).SetAction((userId, eventName, eventArgs) => {
     if(eventArgs === undefined)
         return
@@ -44,7 +47,7 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, new SandboxFunc(engine).SetActi
         case "clientTeam":{
             let team = eventArgs[0]
             let dataToSend = [userId, team]
-            NetworkEvent.SendToAllClients("clientTeam", dataToSend)
+            Network.SendToAllClients("clientTeam", dataToSend)
         }
     }
 }))
@@ -52,12 +55,15 @@ Events.Subscribe(ScriptEvent.OnUserNetworkEvent, new SandboxFunc(engine).SetActi
 
 **Lua**
 ```lua
+local Events = instance.GetHandler("Events")
+local Network = instance.GetHandler("Network")
+
 Events.Subscribe(ScriptEvent.OnUserNetworkEvent, SandboxFunc().SetAction(function(userId, eventName, eventArgs)
     if eventArgs == nil then return end
     if eventName == "clientTeam" then
         local team = eventArgs[0]
         local dataToSend = {userId, team}
-        NetworkEvent.SendToAllClients("clientTeam", dataToSend)
+        Network.SendToAllClients("clientTeam", dataToSend)
     end
 end))
 ```
