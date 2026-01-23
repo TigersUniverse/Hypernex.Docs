@@ -6,6 +6,10 @@
     },
     "servers": [
         {
+            "url": "https://test.hypernex.dev/api/v1",
+            "description": "Version 1 API Test Server"
+        },
+        {
             "url": "https://play.hypernex.dev/api/v1",
             "description": "Version 1 API Main Server"
         }
